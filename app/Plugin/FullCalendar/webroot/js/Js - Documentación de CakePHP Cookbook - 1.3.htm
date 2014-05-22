@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="js no-touch translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <title>Js - Documentación de CakePHP Cookbook - 1.3</title>
+    
+    <link rel="stylesheet" href="./Js - Documentación de CakePHP Cookbook - 1.3_files/default.css" type="text/css">
+    <link rel="stylesheet" href="./Js - Documentación de CakePHP Cookbook - 1.3_files/pygments.css" type="text/css">
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="./Js - Documentación de CakePHP Cookbook - 1.3_files/jquery.js"></script>
+    <script type="text/javascript" src="./Js - Documentación de CakePHP Cookbook - 1.3_files/underscore.js"></script>
+    <script type="text/javascript" src="./Js - Documentación de CakePHP Cookbook - 1.3_files/doctools.js"></script>
+    <script type="text/javascript" src="./Js - Documentación de CakePHP Cookbook - 1.3_files/translations.js"></script>
+    <script type="text/javascript" src="./Js - Documentación de CakePHP Cookbook - 1.3_files/app.js"></script>
+    <script type="text/javascript" src="./Js - Documentación de CakePHP Cookbook - 1.3_files/modernizr.foundation.js"></script>
+    <script type="text/javascript" src="./Js - Documentación de CakePHP Cookbook - 1.3_files/foundation.js"></script>
+    <link rel="top" title="Documentación de CakePHP Cookbook - 1.3" href="http://book.cakephp.org/1.3/es/index.html">
+    <link rel="up" title="Ayudantes del Core" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers.html">
+    <link rel="next" title="Javascript" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Javascript.html">
+    <link rel="prev" title="HTML" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/HTML.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript">
+window.lang = "es";
+</script>
+
+  <link type="text/css" rel="stylesheet" charset="UTF-8" href="./Js - Documentación de CakePHP Cookbook - 1.3_files/translateelement.css"></head>
+  <body>
+
+<div id="container">
+
+<div id="cakephp-global-navigation">
+	<ul>
+		<li class="main"><a href="http://cakephp.org/"><font><font>CakePHP</font></font></a></li>
+		<li class="primary"><a href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#" class="empty"><font><font>Descargas</font></font></a>
+			<ul class="second-level">
+				<li><a href="https://github.com/cakephp/cakephp/tags"><font><font>Estrenos</font></font></a></li>
+				<li><a href="http://pear.cakephp.org/"><font><font>Canal Pera</font></font></a></li>
+			</ul>
+		</li>
+		<li class="primary"><a href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#" class="empty"><font><font>Documentación</font></font></a>
+			<ul class="second-level">
+				<li class="cake-version"><a href="http://api.cakephp.org/"><font><font>API</font></font></a>
+					<ul class="third-level">
+						<li><a href="http://api.cakephp.org/"><font><font>2.3</font></font></a><font><font> &nbsp;|</font></font></li>
+						<li><a href="http://api22.cakephp.org/"><font><font>2.2</font></font></a><font><font> &nbsp;|</font></font></li>
+						<li><a href="http://api13.cakephp.org/"><font><font>1.3</font></font></a><font><font> &nbsp;|</font></font></li>
+						<li><a href="http://api12.cakephp.org/"><font><font>1.2</font></font></a><font><font> &nbsp;|</font></font></li>
+						<li><a href="http://api11.cakephp.org/"><font><font>1.1</font></font></a></li>
+					</ul>
+				</li>
+				<li class="cake-version"><a href="http://book.cakephp.org/"><font><font>Libro</font></font></a>
+					<ul class="third-level">
+						<li><a href="http://book.cakephp.org/2.0/en/"><font><font>2.x</font></font></a><font><font> &nbsp;|</font></font></li>
+						<li><a href="http://book.cakephp.org/1.3/en/"><font><font>1.3</font></font></a><font><font> &nbsp;|</font></font></li>
+						<li><a href="http://book.cakephp.org/1.2/en/"><font><font>1.2</font></font></a><font><font> &nbsp;|</font></font></li>
+						<li><a href="http://book.cakephp.org/1.1/en/"><font><font>1.1</font></font></a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="primary"><a href="http://community.cakephp.org/"><font><font>Comunidad</font></font></a>
+			<ul class="second-level">
+				<li><a href="http://webchat.freenode.net/?channels=cakephp&uio=MT1mYWxzZSY5PXRydWUmMTE9MjQ2b8"><font><font>Ayuda y soporte</font></font></a></li>
+				<li><a href="http://cakephp.lighthouseapp.com/"><font><font>Cuestiones</font></font></a></li>
+				<li><a href="http://bakery.cakephp.org/"><font><font>La panadería</font></font></a></li>
+				<li><a href="http://stackoverflow.com/tags/cakephp"><font><font>Stack Overflow</font></font></a></li>
+				<li><a href="http://www.facebook.com/groups/cake.community"><font><font>Facebook Group</font></font></a></li>
+				<li><a href="http://goo.gl/mSC0s"><font><font>Google+ Comunidad</font></font></a></li>
+				<li><a href="http://www.youtube.com/user/CakePHP"><font><font>YouTube Channel</font></font></a></li>
+				<li><a href="http://twitter.com/CakePHP"><font><font>Siga con nosotros en Twitter</font></font></a></li>
+				<li><a href="http://groups.google.com/group/cake-php"><font><font>Google Group</font></font></a></li>
+				<li><a href="http://github.com/cakephp/cakephp/contributors"><font><font>Colaboradores</font></font></a></li>
+				<li><a href="http://plugins.cakephp.org/"><font><font>Plugins y paquetes</font></font></a></li>
+				<li><a href="http://community.cakephp.org/get-involved"><font><font>Involúcrate</font></font></a></li>
+				<li><a href="http://community.cakephp.org/guidelines"><font><font>Directrices</font></font></a></li>
+				<li><a href="http://cakefest.org/"><font><font>CakeFest</font></font></a></li>
+				<li><a href="http://cakephp.org/logos"><font><font>Logo</font></font></a></li>
+			</ul>
+		</li>
+		<li class="primary"><a href="http://cakephp.org/services"><font><font>Servicios</font></font></a>
+			<ul class="second-level">
+				<li><a href="http://cakephp.org/services/certification"><font><font>Certificación</font></font></a></li>
+				<li><a href="http://cakephp.org/services/consultation"><font><font>Consulta</font></font></a></li>
+				<li><a href="http://cakephp.org/services/support"><font><font>Apoyo</font></font></a></li>
+				<li><a href="http://training.cakephp.org/"><font><font>Formación</font></font></a></li>
+			</ul>
+		</li>
+	</ul>
+<select class="nav-select"><option selected="selected"><font><font>Ir a ..</font></font></option><option value="http://cakephp.org"><font><font>CakePHP</font></font></option><optgroup label="Downloads"><option value="https://github.com/cakephp/cakephp/tags"><font><font>Estrenos</font></font></option><option value="http://pear.cakephp.org"><font><font>Canal Pera</font></font></option></optgroup><optgroup label="Documentation"><option value="http://api.cakephp.org"><font><font>API - 2.3</font></font></option><option value="http://api22.cakephp.org"><font><font>API - 2.2</font></font></option><option value="http://api13.cakephp.org"><font><font>API - 1.3</font></font></option><option value="http://api12.cakephp.org"><font><font>API - 1.2</font></font></option><option value="http://api11.cakephp.org"><font><font>API - 1.1</font></font></option><option value="http://book.cakephp.org/2.0/en/"><font><font>Libro - 2.x</font></font></option><option value="http://book.cakephp.org/1.3/en/"><font><font>Libro - 1.3</font></font></option><option value="http://book.cakephp.org/1.2/en/"><font><font>Libro - 1.2</font></font></option><option value="http://book.cakephp.org/1.1/en/"><font><font>Libro - 1.1</font></font></option></optgroup><optgroup label="Community"><option value="http://webchat.freenode.net/?channels=cakephp&amp;uio=MT1mYWxzZSY5PXRydWUmMTE9MjQ2b8"><font><font>Ayuda y soporte</font></font></option><option value="http://cakephp.lighthouseapp.com"><font><font>Cuestiones</font></font></option><option value="http://bakery.cakephp.org"><font><font>La panadería</font></font></option><option value="http://stackoverflow.com/tags/cakephp"><font><font>Stack Overflow</font></font></option><option value="http://www.facebook.com/groups/cake.community"><font><font>Facebook Group</font></font></option><option value="http://goo.gl/mSC0s"><font><font>Google+ Comunidad</font></font></option><option value="http://www.youtube.com/user/CakePHP"><font><font>YouTube Channel</font></font></option><option value="http://twitter.com/CakePHP"><font><font>Siga con nosotros en Twitter</font></font></option><option value="http://groups.google.com/group/cake-php"><font><font>Google Group</font></font></option><option value="http://github.com/cakephp/cakephp/contributors"><font><font>Colaboradores</font></font></option><option value="http://plugins.cakephp.org"><font><font>Plugins y paquetes</font></font></option><option value="http://community.cakephp.org/get-involved"><font><font>Involúcrate</font></font></option><option value="http://community.cakephp.org/guidelines"><font><font>Directrices</font></font></option><option value="http://cakefest.org"><font><font>CakeFest</font></font></option><option value="http://cakephp.org/logos"><font><font>Logo</font></font></option></optgroup><optgroup label="Services"><option value="http://cakephp.org/services/certification"><font><font>Certificación</font></font></option><option value="http://cakephp.org/services/consultation"><font><font>Consulta</font></font></option><option value="http://cakephp.org/services/support"><font><font>Apoyo</font></font></option><option value="http://training.cakephp.org"><font><font>Formación</font></font></option></optgroup></select></div>
+
+<div class="masthead">
+	<div class="header-backing"></div>
+	<div class="searchbar row">
+		<div class="columns three phone-one">
+			<a class="logo" href="http://book.cakephp.org/1.3/es/contents.html">
+			<img src="./Js - Documentación de CakePHP Cookbook - 1.3_files/cake-logo.png" alt="CakePHP" width="70">
+			</a>
+		</div>
+		
+<div id="searchbox" class="columns nine phone-three">
+
+	<form id="searchform" class="search" action="http://book.cakephp.org/1.3/es/search.html" method="get">
+		<input class="search-input" autocomplete="off" type="search" name="q" size="18">
+		<font><font><input class="search-submit search-big button red" type="submit" value="Búsqueda"></font></font>
+		<input type="hidden" name="check_keywords" value="yes">
+		<input type="hidden" name="area" value="default">
+
+		<a href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#" id="tablet-nav" class="show-on-phones pale button small"><font><font>Nav</font></font></a>
+	</form>
+
+</div>
+	</div>
+</div>
+<div class="breadcrumb-header">
+	<div class="related row">
+		<div class="columns three root-link">
+			<a href="http://book.cakephp.org/1.3/es/contents.html"><font><font>Cookbook 1.3</font></font></a>
+		</div>
+		<div class="columns nine">
+			<ul class="inline breadcrumb">
+			<li>
+				<a href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers.html" accesskey="U"><font><font>Ayudantes del Core</font></font></a>
+			</li>
+			</ul>
+			<ul class="versions inline">
+				<li>
+					<a href="http://book.cakephp.org/2.0/en"><font><font>2.x libro</font></font></a>
+				</li>
+				<li>
+					<a href="http://book.cakephp.org/1.2/es/"><font><font>1.2 Libro</font></font></a>
+				</li>
+				<li><a href="http://book.cakephp.org/1.1/en/"><font><font>1.1 Libro</font></font></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="content row">
+	<div class="document columns nine push-three">
+		<div class="body">
+			
+  <div class="section" id="js">
+<h1><font><font>Js</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#js" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h1>
+<p><font><font>Desde el Comienzo, el Soporte de CakePHP párr Javascript ha Sido estafa Prototyp / Scriptaculous. </font><font>MIENTRAS Seguimos pensando Que ESTAS hijo Unas Excelentes Bibliotecas de Javascript, la comunidad ha Estado Pidiendo Soporte HACIA Otras Bibliotecas. </font><font>En Lugar De tirar Prototype es a favor de Otra biblioteca de Javascript. </font><font>HEMOS Puntos Creado ONU Adaptador basado en el los ayudantes, e incluimos 3 De Las bilbiotecas mas solicitadas. </font><font>Prototype / Scriptaculous, Mootools / Mootools-más, y jQuery / jQuery UI. </font><font>Y mientras que la API no es tan extensa como el AjaxHelper anterior consideramos que la solución basada adaptador permite una solución más extensible dando a los desarrolladores el poder y la flexibilidad que necesitan para hacer frente a sus necesidades de aplicación específicas.</font></font></p>
+<p><font><font>Motores de JavaScript son la columna vertebral de la nueva JsHelper. </font><font>Un motor de Javascript traduce un elemento Javascript abstracto en concreto de código Javascript específico a la biblioteca Javascript está utilizando. </font><font>Además crean un sistema extensible para que otros la utilicen.</font></font></p>
+<div class="section" id="using-a-specific-javascript-engine">
+<h2><font><font>El uso de un motor específico Javascript</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#using-a-specific-javascript-engine" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h2>
+<p><font><font>En primer lugar descargar su biblioteca de Javascript preferido y colocarla en
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>app / webroot / js</font></font></span></tt></p>
+<p><font><font>A continuación, debe incluir la biblioteca en su página. </font><font>Para incluirlo en todas las páginas, añadir la siguiente línea a la sección &lt;head&gt; de
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>app / views / layouts / default.ctp</font></font></span></tt><font><font> (copiar este archivo desde
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>cake / libs / view / layouts / default.ctp</font></font></span></tt><font><font> si no ha creado el suyo propio) .</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Html </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>guión </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'jquery' </font></font></span><span class="p"><font><font>); </font></font></span> <span class="c1"><font><font>/ / Incluir la biblioteca jQuery</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Reemplace </font></font><tt class="docutils literal"><span class="pre"><font><font>jQuery</font></font></span></tt><font><font> con el nombre de su archivo de biblioteca (. js se agregarán a su nombre).</font></font></p>
+<p><font><font>Por defecto está en caché, y usted debe imprimir explícitamente la caché. </font><font>Para ello, al final de cada página, incluya esta línea justo antes de que el final </font></font><tt class="docutils literal"><span class="pre"><font><font>&lt;/ body&gt;</font></font></span></tt><font><font> etiqueta</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>writeBuffer </font></font></span><span class="p"><font><font>(); </font></font></span> <span class="c1"><font><font>/ / escribir archivos de comandos en caché</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Usted debe incluir a la biblioteca en su página e imprimir la memoria caché para el ayudante de funcionar.</font></font></p>
+<p><font><font>Javascript selección del motor se declara cuando se incluye la ayuda en su controlador.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>var </font></font></span> <span class="nv"><font><font>$ helpers </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Js' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Jquery' </font></font></span><span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Lo anterior sería utilizar el motor de Jquery en los casos de JsHelper en sus puntos de vista. </font><font>Si no se declara un motor específico, el motor de jQuery se utilizará como predeterminado. </font><font>Como se ha mencionado antes, hay tres motores implementados en el núcleo, pero alentamos a la comunidad para ampliar la compatibilidad de la biblioteca.</font></font></p>
+<div class="section" id="using-jquery-with-other-libraries">
+<h3><font><font>Usando jQuery con otras bibliotecas</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#using-jquery-with-other-libraries" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h3>
+<p><font><font>La biblioteca jQuery, y prácticamente todos sus plugins se ven limitados en el espacio de nombres de jQuery. </font><font>Como regla general, los objetos "globales" se almacenan en el interior del espacio de nombres de jQuery, así, por lo que no deben recibir un choque entre jQuery y cualquier otra biblioteca (como Prototype, Mootools, YUI o).</font></font></p>
+<p><font><font>Dicho esto, hay una advertencia: </font></font><strong><font><font>De forma predeterminada, jQuery utiliza "$" como una abreviatura de "jQuery"</font></font></strong></p>
+<p><font><font>Para anular el acceso directo "$", utilice la variable jQueryObject.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>JqueryEngine </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>jQueryObject </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="s1"><font><font>'$ j' </font></font></span><span class="p"><font><font>; </font></font></span>
+<span class="k"><font><font>print </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Html </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>ScriptBlock </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'var $ j = jQuery.noConflict ();' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'inline' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>true </font></font></span><span class="p"><font><font>)) ; </font></font></span> <span class="c1"><font><font>/ / Dile a jQuery para pasar al modo noconflict</font></font></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-jshelper-inside-customhelpers">
+<h3><font><font>Usando el JsHelper dentro customHelpers</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#using-the-jshelper-inside-customhelpers" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h3>
+<p><font><font>Declarar el JsHelper en </font></font><tt class="docutils literal"><span class="pre"><font><font>ayudantes $</font></font></span></tt><font><font> array en su customHelper.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>var </font></font></span> <span class="nv"><font><font>$ helpers </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Js' </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>No es posible declarar un motor de javascript dentro de un helper personalizado. </font><font>Hacer eso no tendrá ningún efecto.</font></font></p>
+<p><font><font>Si usted está dispuesto a usar otro motor de javascript de la predeterminada, realizar la configuración auxiliar en el controlador de la siguiente manera:</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>var </font></font></span> <span class="nv"><font><font>$ helpers </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+    <span class="s1"><font><font>'Js' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Prototype' </font></font></span><span class="p"><font><font>), </font></font></span>
+    <span class="s1"><font><font>'CustomHelper' </font></font></span>
+<span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Asegúrese de declarar el JsHelper y su motor </font></font><strong><font><font>en la parte superior</font></font></strong><font><font> del
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>ayudantes $</font></font></span></tt><font><font> matriz en el controlador.</font></font></p>
+<p><font><font>El javascript motor seleccionado puede desaparecer (reemplazado por el valor predeterminado) desde el objeto jsHelper en su ayudante, si se olvida de hacerlo y obtendrá un código que no se ajuste a tu biblioteca de Javascript.</font></font></p>
+</div>
+</div>
+<div class="section" id="creating-a-javascript-engine">
+<h2><font><font>Creación de un motor de Javascript</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#creating-a-javascript-engine" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h2>
+<p><font><font>Ayudantes motor de JavaScript siguen las convenciones normales de ayuda, con algunas restricciones adicionales. </font><font>Ellos deben tener el </font></font><tt class="docutils literal"><span class="pre"><font><font>motor</font></font></span></tt><font><font> sufijo.
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>DojoHelper</font></font></span></tt><font><font> no es bueno, </font></font><tt class="docutils literal"><span class="pre"><font><font>DojoEngineHelper</font></font></span></tt><font><font> es correcta. </font><font>Además, deben extender </font></font><tt class="docutils literal"><span class="pre"><font><font>JsBaseEngineHelper</font></font></span></tt><font><font> con el fin de aprovechar al máximo la nueva API.</font></font></p>
+</div>
+<div class="section" id="javascript-engine-usage">
+<h2><font><font>Javascript uso del motor</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#javascript-engine-usage" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h2>
+<p><font><font>El </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> proporciona algunos métodos, y actúa como una fachada para el ayudante del motor. </font><font>Usted no debe acceder directamente al ayudante de motor, excepto en raras ocasiones. </font><font>Uso de las características de la fachada de la </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> 
+le permite aprovechar el almacenamiento en búfer y las características de encadenamiento de métodos incorporados; </font><font>(Método de encadenamiento sólo funciona en PHP5).</font></font></p>
+<p><font><font>El </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> por buffers por defecto casi todo el código de secuencia de comandos generada, lo que le permite recoger los scripts en todo el juicio, los elementos y el diseño, y la muestran en un solo lugar. </font><font>Salida de secuencias de comandos almacenados en el búfer se hace con </font></font><tt class="docutils literal"><span class="pre"><font><font>$ this-&gt; Js-&gt; writeBuffer ();</font></font></span></tt><font><font> esto devolverá el contenido del búfer en una etiqueta de script. </font><font>Puede deshabilitar el almacenamiento en búfer por mayor con el
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>$ bufferScripts</font></font></span></tt><font><font> propiedad o el establecimiento de </font></font><tt class="docutils literal"><span class="pre"><font><font>búfer </font></font></span> <span class="pre"><font><font>=&gt; </font></font></span> <span class="pre"><font><font>false</font></font></span></tt><font><font> en los métodos que toman </font></font><tt class="docutils literal"><span class="pre"><font><font>$ options</font></font></span></tt><font><font> .</font></font></p>
+<p><font><font>Como la mayoría de los métodos en Javascript comienzan con una selección de elementos en el DOM, </font></font><tt class="docutils literal"><span class="pre"><font><font>$ this-&gt; Js-&gt; get ()</font></font></span></tt><font><font> devuelve un $ this, lo que le permite a la cadena de los métodos que utilizan la selección. </font><font>Encadenamiento Método permite escribir más corto, el código más expresiva. </font><font>Cabe señalar que el método de encadenamiento
+ </font></font><strong><font><font>no va a</font></font></strong><font><font> trabajar en PHP4.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>obtener </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'# foo' </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>evento </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'click' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nv"><font><font>$ eventCode </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Es un ejemplo de método de encadenamiento. </font><font>Método de encadenamiento no es posible en PHP4 y la muestra anterior se escribiría así:</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'# foo' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>evento </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'click' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nv"><font><font>$ eventCode </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<div class="section" id="common-options">
+<h3><font><font>Las opciones comunes</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#common-options" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h3>
+<p><font><font>En un intento por simplificar el desarrollo donde las bibliotecas Js pueden cambiar, un conjunto común de opciones es apoyado por </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> , estas opciones comunes se asignarán a las opciones específicas de la biblioteca interna. </font><font>Si usted no planea cambiarse librerías Javascript, cada biblioteca también es compatible con la totalidad de sus devoluciones de llamada y las opciones nativas.</font></font></p>
+</div>
+<div class="section" id="callback-wrapping">
+<h3><font><font>Embalaje de devolución de llamada</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#callback-wrapping" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h3>
+<p><font><font>Por defecto todas las opciones de devolución de llamada se envuelven con la una función anónima con los argumentos correctos. </font><font>Puede desactivar este comportamiento mediante el suministro de la </font></font><tt class="docutils literal"><span class="pre"><font><font>wrapCallbacks </font></font></span> <span class="pre"><font><font>= </font></font></span> <span class="pre"><font><font>falsa</font></font></span></tt><font><font> en su gama de opciones.</font></font></p>
+</div>
+<div class="section" id="working-with-buffered-scripts">
+<h3><font><font>Trabajar con scripts de búfer</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#working-with-buffered-scripts" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h3>
+<p><font><font>Un inconveniente de la aplicación anterior de características de tipo 'Ajax' fue la dispersión de etiquetas script en todo el documento, y la incapacidad para amortiguar los scripts agregados por los elementos en el diseño. </font><font>El nuevo JsHelper si se utiliza correctamente evita esas dos cuestiones. </font><font>Se recomienda que usted coloca
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>$ this-&gt; Js-&gt; writeBuffer ()</font></font></span></tt><font><font> en la parte inferior de su archivo de diseño por encima de la
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>&lt;/ body&gt;</font></font></span></tt><font><font> etiqueta. </font><font>Esto permitirá que todos los scripts generados en los elementos de diseño se impriman en un solo lugar. </font><font>Cabe señalar que los guiones tamponadas son manejados por separado de los archivos de script incluidas.</font></font></p>
+<p><font><font>writeBuffer ($ opciones = array ())</font></font></p>
+<p><font><font>Escribe todas Javascript generado hasta ahora un bloque de código o los almacena en caché en un archivo y devuelve un script vinculado.</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>en línea</font></font></span></tt><font><font> - Se establece en true para que la salida guiones como un bloque en línea script si </font></font><tt class="docutils literal"><span class="pre"><font><font>caché</font></font></span></tt><font><font> también es cierto, se generará una etiqueta de vínculo de script. </font><font>(Por defecto true)</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>cache</font></font></span></tt><font><font> - Se establece en true para que los scripts en caché en un archivo y vinculados en (false por defecto)</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>claro</font></font></span></tt><font><font> - Se establece en false para evitar que la memoria caché de la escritura se borre (por defecto true)</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>onDomReady</font></font></span></tt><font><font> - guiones wrap en caché en caso domready (por defecto true)</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>seguro</font></font></span></tt><font><font> - si se genera un bloque de línea debería ser envuelto en &lt;! [CDATA [...]]&gt; (predeterminado true)</font></font></li>
+</ul>
+<p><font><font>Creación de un archivo de caché con </font></font><tt class="docutils literal"><span class="pre"><font><font>writeBuffer ()</font></font></span></tt><font><font> requiere que
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>webroot / js</font></font></span></tt><font><font> ser escribible mundo y permite a un navegador para almacenar en caché los recursos de script generado para cualquier página.</font></font></p>
+<p><font><font>tampón ($ contenido)</font></font></p>
+<p><font><font>Añadir </font></font><tt class="docutils literal"><span class="pre"><font><font>$ contenido</font></font></span></tt><font><font> a la memoria intermedia de la escritura interna.</font></font></p>
+<p><font><font>GetBuffer ($ clear = true)</font></font></p>
+<p><font><font>Consiga el contenido del búfer en uso. </font><font>Pase en false para no borrar el búfer al mismo tiempo.</font></font></p>
+<p><strong><font><font>Métodos de tamponamiento que normalmente no están amortiguadas</font></font></strong></p>
+<p><font><font>Algunos métodos de los ayudantes se almacenan de forma predeterminada. </font><font>Los motores de amortiguar los métodos siguientes de manera predeterminada:</font></font></p>
+<ul class="simple">
+<li><font><font>evento</font></font></li>
+<li><font><font>sortable</font></font></li>
+<li><font><font>arrastrar</font></font></li>
+<li><font><font>soltar</font></font></li>
+<li><font><font>deslizador</font></font></li>
+</ul>
+<p><font><font>Además, puede obligar a ningún otro método en JsHelper utilizar el almacenamiento en búfer. </font><font>Añadiendo un boolean hasta el final de los argumentos que puede obligar a otros métodos para entrar en el búfer. </font><font>Por ejemplo, la </font></font><tt class="docutils literal"><span class="pre"><font><font>each ()</font></font></span></tt><font><font> 
+método normalmente no búfer.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>cada uno </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'alert ("! whoa");' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>verdadero </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Lo anterior obligaría al </font></font><tt class="docutils literal"><span class="pre"><font><font>each ()</font></font></span></tt><font><font> método para utilizar la memoria intermedia. </font><font>Por el contrario, si usted quiere un método que el tampón no búfer, se puede pasar un </font></font><tt class="docutils literal"><span class="pre"><font><font>falso</font></font></span></tt><font><font> como el último argumento.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>evento </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'click' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="s1"><font><font>'alert ("! whoa");' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>false </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Esto obligaría a la función de eventos que normalmente amortigua para volver su resultado.</font></font></p>
+</div>
+</div>
+<div class="section" id="methods">
+<h2><font><font>Métodos</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#methods" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h2>
+<p><font><font>Los núcleos motores de JavaScript proporcionan las mismas características en todas las bibliotecas, también hay un subconjunto de las opciones comunes que se traducen en opciones específicas de la biblioteca. </font><font>Esto se hace para proporcionar a los desarrolladores de extremo con unificada como una API como sea posible. </font><font>La siguiente lista de métodos son compatibles con todos los motores incluidos en el núcleo de CakePHP. </font><font>Cada vez que vea listas separadas para </font></font><tt class="docutils literal"><span class="pre"><font><font>Opciones</font></font></span></tt><font><font> y </font></font><tt class="docutils literal"><span class="pre"><font><font>eventos </font></font></span> <span class="pre"><font><font>Opciones</font></font></span></tt><font><font> ambos conjuntos de parámetros se suministran en la </font></font><tt class="docutils literal"><span class="pre"><font><font>$ options</font></font></span></tt><font><font> array para el método.</font></font></p>
+<p><font><font>objeto ($ data, $ options = array ())</font></font></p>
+<p><font><font>Convierte valores en JSON. </font><font>Hay algunas diferencias entre este método y JavascriptHelper :: () del objeto. </font><font>Lo más notable es que no hay potencialidad para </font></font><tt class="docutils literal"><span class="pre"><font><font>stringKeys</font></font></span></tt><font><font> o </font></font><tt class="docutils literal"><span class="pre"><font><font>q</font></font></span></tt><font><font> opciones que se encuentran en el JavascriptHelper. </font><font>Además </font></font><tt class="docutils literal"><span class="pre"><font><font>$ this-&gt; Js-&gt; () del objeto;</font></font></span></tt><font><font> no pueden hacer etiquetas de script.</font></font></p>
+<p><strong><font><font>Opciones:</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>prefijo</font></font></span></tt><font><font> - String antepuesto a los datos devueltos.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>Postfix</font></font></span></tt><font><font> - String anexa a los datos devueltos.</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo Uso:</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ Json </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>objeto </font></font></span><span class="p"><font><font>( </font></font></span><span class="nv"><font><font>$ data </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>se pueden ordenar ($ options = array ())</font></font></p>
+<p><font><font>Ordenable genera un fragmento de código JavaScript para realizar un conjunto de elementos (por lo general una lista) de arrastrar y soltar se puede ordenar.</font></font></p>
+<p><font><font>Las opciones normalizadas son:</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>contención</font></font></span></tt><font><font> - Contenedor de acción de movimiento</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>manejar</font></font></span></tt><font><font> - Selector de manejar elemento. </font><font>Sólo este elemento se iniciará acción de ordenación.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>volver</font></font></span></tt><font><font> - Si desea utilizar o no un efecto a mover clasificable en su posición final.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>opacidad</font></font></span></tt><font><font> - Opacidad del marcador de posición</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>distancia</font></font></span></tt><font><font> - Distancia a sortable debe ser arrastrado antes de clasificarlas como titular.</font></font></li>
+</ul>
+<p><strong><font><font>Opciones de eventos</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>inicio</font></font></span></tt><font><font> - Evento disparó al ordenar aperturas</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>tipo</font></font></span></tt><font><font> - Evento disparó durante la clasificación</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>complete</font></font></span></tt><font><font> - Evento disparó al ordenar la ultima.</font></font></li>
+</ul>
+<p><font><font>Otras opciones son compatibles con cada biblioteca de Javascript, y usted debe comprobar la documentación de la biblioteca javascript para obtener información más detallada acerca de sus opciones y parámetros.</font></font></p>
+<p><strong><font><font>Ejemplo del uso:</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'#my-list' </font></font></span><span class="p"><font><font>); </font></font></span>
+    <span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>sortable </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+        <span class="s1"><font><font>'distance' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="mi"><font><font>5 </font></font></span><span class="p"><font><font>, </font></font></span>
+        <span class="s1"><font><font>'containment' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'parent' </font></font></span><span class="p"><font><font>, </font></font></span>
+        <span class="s1"><font><font>'start' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onStart' </font></font></span><span class="p"><font><font>, </font></font></span>
+        <span class="s1"><font><font>'complete' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onStop' </font></font></span><span class="p"><font><font>, </font></font></span>
+        <span class="s1"><font><font>'sort' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onSort' </font></font></span><span class="p"><font><font>, </font></font></span>
+        <span class="s1"><font><font>'wrapCallbacks' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>false </font></font></span>
+    <span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Suponiendo que estaba utilizando el motor de jQuery, que obtendría el siguiente código en su bloque Javascript generado:</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="err"><font><font>$ </font></font></span><span class="p"><font><font>( </font></font></span><span class="s2"><font><font>"# myList" </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>. </font></font></span><span class="nx"><font><font>sortable </font></font></span><span class="p"><font><font>({ </font></font></span><span class="nx"><font><font>contención </font></font></span><span class="o"><font><font>: </font></font></span><span class="s2"><font><font>"padre" </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>distancia </font></font></span><span class="o"><font><font>: </font></font></span><span class="mi"><font><font>5 </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nb"><font><font>tipo </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onSort </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>inicia </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onStart </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>detener </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onStop </font></font></span><span class="p"><font><font>});</font></font></span>
+</pre></div>
+</div>
+<p><font><font>solicitud ($ url, $ options = array ())</font></font></p>
+<p><font><font>Generar un fragmento de código javascript para crear una </font></font><tt class="docutils literal"><span class="pre"><font><font>XmlHttpRequest</font></font></span></tt><font><font> o solicitud 'AJAX'.</font></font></p>
+<p><strong><font><font>Opciones de eventos</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>completar</font></font></span></tt><font><font> - Devolución de llamada a disparar contra completa.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>éxito</font></font></span></tt><font><font> - Devolución de llamada al fuego en caso de éxito.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>antes</font></font></span></tt><font><font> - Devolución de llamada al fuego a petición de inicialización.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>error</font></font></span></tt><font><font> - Devolución de llamada al fuego en caso de fallo petición.</font></font></li>
+</ul>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>método</font></font></span></tt><font><font> - el método para realizar la solicitud con impagos a GET en más bibliotecas</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>async</font></font></span></tt><font><font> - Ya sea o no que una solicitud asincrónica.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>datos</font></font></span></tt><font><font> - Datos adicionales para enviar.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>Actualiza</font></font></span></tt><font><font> - id Dom para actualizar el contenido de la solicitud.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>Tipo</font></font></span></tt><font><font> - Tipo de datos para la respuesta. </font><font>'Json' y 'html' son compatibles. </font><font>El valor predeterminado es HTML para la mayoría de las bibliotecas.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>evalScripts</font></font></span></tt><font><font> - Sea o no &lt;script&gt; deben eval'ed.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>dataExpression</font></font></span></tt><font><font> - Si la </font></font><tt class="docutils literal"><span class="pre"><font><font>información</font></font></span></tt><font><font> se tratará clave como llamada de retorno. </font><font>Útil para el suministro de </font></font><tt class="docutils literal"><span class="pre"><font><font>$ options ['datos']</font></font></span></tt><font><font> como otra expresión Javascript.</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo de uso</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>event </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'click' </font></font></span><span class="p"><font><font>, </font></font></span>
+<span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>request </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+<span class="s1"><font><font>'action' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'foo' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>param1 </font></font></span><span class="p"><font><font>), </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+<span class="s1"><font><font>'async' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>true </font></font></span><span class="p"><font><font>, </font></font></span>
+<span class="s1"><font><font>'update' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'#element' </font></font></span><span class="p"><font><font>)));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>get ($ selector)</font></font></p>
+<p><font><font>Ajuste la "selección" interna a un selector CSS. </font><font>La selección activa se utiliza en las operaciones posteriores hasta que se realice una nueva selección.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'# element' </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>El </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> ahora consultará todos los demás métodos de elementos basados ​​en la selección de </font></font><tt class="docutils literal"><span class="pre"><font><font># element</font></font></span></tt><font><font> . </font><font>Para cambiar la selección activa, llame a
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>get ()</font></font></span></tt><font><font> de nuevo con un nuevo elemento.</font></font></p>
+<p><font><font>arrastre ($ opciones = array ())</font></font></p>
+<p><font><font>Hacer un elemento arrastrable.</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>manejar</font></font></span></tt><font><font> - selector en la empuñadura.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>snapGrid</font></font></span></tt><font><font> - La cuadrícula de píxeles que el movimiento se ajusta a, una matriz (x, y)</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>contenedor</font></font></span></tt><font><font> - El elemento que actúa como un cuadro de delimitación para el elemento arrastrable.</font></font></li>
+</ul>
+<p><strong><font><font>Opciones de eventos</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>inicio</font></font></span></tt><font><font> - Evento que se activa cuando se inicia el arrastre</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>drag</font></font></span></tt><font><font> - Evento disparó en cada paso del arrastre</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>stop</font></font></span></tt><font><font> - Evento disparó al arrastrar paradas (liberación del ratón)</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo de uso</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'#element' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>drag </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+    <span class="s1"><font><font>'container' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'#content' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'start' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onStart' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'drag' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onDrag' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'stop' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onStop' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'snapGrid' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="mi"><font><font>10 </font></font></span><span class="p"><font><font>, </font></font></span> <span class="mi"><font><font>10 </font></font></span><span class="p"><font><font>), </font></font></span>
+    <span class="s1"><font><font>'wrapCallbacks' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>false </font></font></span>
+<span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Si se utiliza el motor de jQuery se añadiría el siguiente código en el búfer.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="err"><font><font>$ </font></font></span><span class="p"><font><font>( </font></font></span><span class="s2"><font><font>"#element" </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>. </font></font></span><span class="nx"><font><font>draggable </font></font></span><span class="p"><font><font>({ </font></font></span><span class="nx"><font><font>containment </font></font></span><span class="o"><font><font>: </font></font></span><span class="s2"><font><font>"#content" </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>drag </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onDrag </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>grid </font></font></span><span class="o"><font><font>: </font></font></span><span class="p"><font><font>[ </font></font></span><span class="mi"><font><font>10 </font></font></span><span class="p"><font><font>, </font></font></span><span class="mi"><font><font>10 </font></font></span><span class="p"><font><font>], </font></font></span> <span class="nx"><font><font>start </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onStart </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>stop </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onStop </font></font></span><span class="p"><font><font>});</font></font></span>
+</pre></div>
+</div>
+<p><font><font>gota ($ options = array ())</font></font></p>
+<p><font><font>Haga un elemento aceptar elementos arrastrables y actuar como zona de saltos para los elementos arrastrados.</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>aceptar</font></font></span></tt><font><font> - Selector de elementos de esta lanzables aceptará.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>hoverclass</font></font></span></tt><font><font> - Class para agregar a Soltable cuando un arrastrable ha terminado.</font></font></li>
+</ul>
+<p><strong><font><font>Opciones de eventos</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>drop</font></font></span></tt><font><font> - Evento desencadena cuando un elemento se deja caer en la zona de descenso.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>libración</font></font></span></tt><font><font> - Evento disparó cuando un arrastre entra en una zona de arrastre.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>dejar</font></font></span></tt><font><font> - Evento que se activa cuando una carga se retira de una zona de colocación sin que se cayó.</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo de uso</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'#element' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>drop </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+    <span class="s1"><font><font>'accept' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'.items' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'hover' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onHover' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'leave' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onExit' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'drop' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onDrop' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'wrapCallbacks' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>false </font></font></span>
+<span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Si se utiliza el motor de jQuery se añadiría el siguiente código en el búfer:</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o"><font><font>&lt; </font></font></span><span class="nx"><font><font>code </font></font></span> <span class="nx"><font><font>class </font></font></span><span class="o"><font><font>= </font></font></span>
+<span class="s2"><font><font>"php" </font></font></span><span class="o"><font><font>&gt; </font></font></span><span class="err"><font><font>$ </font></font></span><span class="p"><font><font>( </font></font></span><span class="s2"><font><font>"#element" </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>. </font></font></span><span class="nx"><font><font>droppable </font></font></span><span class="p"><font><font>({ </font></font></span><span class="nx"><font><font>accept </font></font></span><span class="o"><font><font>: </font></font></span><span class="s2"><font><font>".items" </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>drop </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onDrop </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>out </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onExit </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>over </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onHover </font></font></span><span class="p"><font><font>}); </font></font></span><span class="o"><font><font>&lt;/ </font></font></span><span class="nx"><font><font>code </font></font></span><span class="o"><font><font>&gt;</font></font></span>
+</pre></div>
+</div>
+<p><strong><font><font>'''' Nota acerca MootoolsEngine :: gota</font></font></strong></p>
+<p><font><font>Droppables en función Mootools diferente a otras bibliotecas. </font><font>Droppables se implementan como una extensión de Drag. </font><font>Así que en addtion a hacer un get () de selección para el elemento lanzables. </font><font>También debe proporcionar una regla de selección para el elemento arrastrable. </font><font>Además, droppables Mootools heredan todas las opciones de arrastrar.</font></font></p>
+<p><font><font>deslizador ()</font></font></p>
+<p><font><font>Crear fragmento de Javascript que convierte un elemento en un widget deslizador de UI. </font><font>Consulte a su puesta en práctica para el uso de las bibliotecas y las características adicionales.</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>manejar</font></font></span></tt><font><font> - El id del elemento utilizado en el deslizamiento.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>Dirección</font></font></span></tt><font><font> - La dirección del cursor o bien «vertical» u «horizontal»</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>min</font></font></span></tt><font><font> - El valor mínimo de la barra deslizante.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>max</font></font></span></tt><font><font> - El valor máximo de la barra deslizante.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>paso</font></font></span></tt><font><font> - El número de pasos o garrapatas el control deslizante tendrá.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>valor</font></font></span></tt><font><font> - El desplazamiento de la corredera inicial.</font></font></li>
+</ul>
+<p><strong><font><font>Eventos</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>cambio</font></font></span></tt><font><font> - Fired cuando el valor del control deslizante se actualiza</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>completar</font></font></span></tt><font><font> - Fired cuando el usuario deja deslizar el mango</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo de uso</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'#element' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>slider </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+    <span class="s1"><font><font>'complete' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onComplete' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'change' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'onChange' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'min' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="mi"><font><font>0 </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'max' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="mi"><font><font>10 </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'value' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="mi"><font><font>2 </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'direction' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'vertical' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'wrapCallbacks' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>false </font></font></span>
+<span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Si se utiliza el motor de jQuery se añadiría el siguiente código en el búfer:</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="err"><font><font>$ </font></font></span><span class="p"><font><font>( </font></font></span><span class="s2"><font><font>"# element" </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>. </font></font></span><span class="nx"><font><font>deslizador </font></font></span><span class="p"><font><font>({ </font></font></span><span class="nx"><font><font>cambio </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onChange </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nb"><font><font>máx </font></font></span><span class="o"><font><font>: </font></font></span><span class="mi"><font><font>10 </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nb"><font><font>min </font></font></span><span class="o"><font><font>: </font></font></span><span class="mi"><font><font>0 </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>orientación </font></font></span><span class="o"><font><font>: </font></font></span><span class="s2"><font><font>"vertical" </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>parar </font></font></span><span class="o"><font><font>: </font></font></span><span class="nx"><font><font>onComplete </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nx"><font><font>valor </font></font></span><span class="o"><font><font>: </font></font></span><span class="mi"><font><font>2 </font></font></span><span class="p"><font><font>});</font></font></span>
+</pre></div>
+</div>
+<p><font><font>efecto ($ name, $ options = array ())</font></font></p>
+<p><font><font>Crea un efecto básico. </font><font>Por defecto, este método no es amortiguada y devuelve su resultado.</font></font></p>
+<p><strong><font><font>Nombres de efectos que ofrece</font></font></strong></p>
+<p><font><font>Los siguientes efectos son compatibles con todos JsEngines</font></font></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>espectáculo</font></font></span></tt><font><font> - revelan un elemento.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>ocultar</font></font></span></tt><font><font> - ocultar un elemento.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>fadeIn</font></font></span></tt><font><font> - Fade en un elemento.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>desvanecimiento</font></font></span></tt><font><font> - Fade out un elemento.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>slideIn</font></font></span></tt><font><font> - Deslice un elemento pulg</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>slideOut</font></font></span></tt><font><font> - Deslice un elemento fuera.</font></font></li>
+</ul>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>Velocidad</font></font></span></tt><font><font> - La velocidad a la que la animación debe ocurrir. </font><font>Los valores aceptados son "lento", "rápido". </font><font>No todos los efectos del uso de la opción de velocidad.</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo de uso</font></font></strong></p>
+<p><font><font>Si se utiliza el motor de jQuery.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>obtener </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'# element' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="nv"><font><font>$ result </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>efecto </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'fadeIn' </font></font></span><span class="p"><font><font>);</font></font></span><font></font>
+<font></font>
+<span class="c1"><font><font>/ / $ Result contiene $ ("# foo") fadeIn ().;</font></font></span>
+</pre></div>
+</div>
+<p><font><font>evento (tipo $, $ contenido, $ options = array ())</font></font></p>
+<p><font><font>Enlazar un evento para la selección actual. </font></font><tt class="docutils literal"><span class="pre"><font><font>$ tipo</font></font></span></tt><font><font> puede ser cualquiera de los eventos DOM normales o con un tipo de evento personalizado si su biblioteca los apoya.
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>$ contenido</font></font></span></tt><font><font> debe contener el cuerpo de la función para la devolución de llamada. </font><font>Las devoluciones de llamada serán envueltos con </font></font><tt class="docutils literal"><span class="pre"><font><font>la función </font></font></span> <span class="pre"><font><font>(evento) </font></font></span> <span class="pre"><font><font>{ </font></font></span> <span class="pre"><font><font>... </font></font></span> <span class="pre"><font><font>}</font></font></span></tt><font><font> menos que se deshabilite las </font></font><tt class="docutils literal"><span class="pre"><font><font>opciones de $</font></font></span></tt><font><font> .</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>envuelves</font></font></span></tt><font><font> - Si usted quiere la devolución de llamada envuelta en una función anónima. </font><font>(Por defecto es true)</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>paras</font></font></span></tt><font><font> - Si usted quiere que el evento se detuvo. </font><font>(Por defecto es true)</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo de uso</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'# cierta-link' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>evento </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'click' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>alerta </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'hey you!' </font></font></span><span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Si estaba utilizando la librería jQuery que se obtendría el siguiente código de Javascript.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="err"><font><font>$ </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'# cierta-link' </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>. </font></font></span><span class="nx"><font><font>bind </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'click' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>la función </font></font></span> <span class="p"><font><font>( </font></font></span><span class="nx"><font><font>evento </font></font></span><span class="p"><font><font>) </font></font></span> <span class="p"><font><font>{ </font></font></span>
+    <span class="nx"><font><font>alerta </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'hey you!' </font></font></span><span class="p"><font><font>); </font></font></span>
+    <span class="k"><font><font>devuelve </font></font></span> <span class="k"><font><font>false </font></font></span><span class="p"><font><font>; </font></font></span>
+<span class="p"><font><font>});</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Se puede quitar el </font></font><tt class="docutils literal"><span class="pre"><font><font>retorno </font></font></span> <span class="pre"><font><font>false;</font></font></span></tt><font><font> pasando establecer el </font></font><tt class="docutils literal"><span class="pre"><font><font>stop</font></font></span></tt><font><font> 
+opción en false.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'# cierta-link' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>evento </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'click' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>alerta </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'hey you!' </font></font></span><span class="p"><font><font>), </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'stop ' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>true </font></font></span><span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Si estaba utilizando la librería jQuery usted se añadiría el siguiente código Javascript en el búfer. </font><font>Tenga en cuenta que el evento navegador por defecto no se cancela.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="err"><font><font>$ </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'# cierta-link' </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>. </font></font></span><span class="nx"><font><font>bind </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'click' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>la función </font></font></span> <span class="p"><font><font>( </font></font></span><span class="nx"><font><font>evento </font></font></span><span class="p"><font><font>) </font></font></span> <span class="p"><font><font>{ </font></font></span>
+    <span class="nx"><font><font>alerta </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'hey you!' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="p"><font><font>});</font></font></span>
+</pre></div>
+</div>
+<p><font><font>domready ($ callback)</font></font></p>
+<p><font><font>Crea el evento especial 'DOM ready'. </font></font><tt class="docutils literal"><span class="pre"><font><font>writeBuffer ()</font></font></span></tt><font><font> ajusta automáticamente los scripts almacenados temporalmente en un método domready.</font></font></p>
+<p><font><font>cada uno ($ callback)</font></font></p>
+<p><font><font>Crear un fragmento de código que itera sobre los elementos seleccionados en ese momento, e insertos </font></font><tt class="docutils literal"><span class="pre"><font><font>$ callback</font></font></span></tt><font><font> .</font></font></p>
+<p><strong><font><font>Ejemplo</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>obtener </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'div.message' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>cada uno </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'. $ (this) css ({color: "rojo"});' </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Usando el motor de jQuery crearía el siguiente Javascript</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="err"><font><font>$ </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'div.message' </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>. </font></font></span><span class="nb"><font><font>cada una </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>función </font></font></span> <span class="p"><font><font>() </font></font></span> <span class="p"><font><font>{ </font></font></span> <span class="err"><font><font>$ </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>este </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>. </font></font></span><span class="nx"><font><font>css </font></font></span><span class="p"><font><font>({ </font></font></span><span class="nx"><font><font>colores </font></font></span><span class="o"><font><font>: </font></font></span> <span class="s2"><font><font>"rojo" </font></font></span><span class="p"><font><font>});});</font></font></span>
+</pre></div>
+</div>
+<p><font><font>alert ($ mensaje)</font></font></p>
+<p><font><font>Crear un fragmento de código javascript que contiene una </font></font><tt class="docutils literal"><span class="pre"><font><font>alerta ()</font></font></span></tt><font><font> fragmento. </font><font>Por defecto, </font></font><tt class="docutils literal"><span class="pre"><font><font>la alerta</font></font></span></tt><font><font> no almacena y devuelve el fragmento de guión.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ Alerta </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="nv"><font><font>$ este </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>alerta </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Hola' </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>confirmar ($ mensaje)</font></font></p>
+<p><font><font>Crear un fragmento de código javascript que contiene un </font></font><tt class="docutils literal"><span class="pre"><font><font>confirm ()</font></font></span></tt><font><font> fragmento. </font><font>Por defecto, </font></font><tt class="docutils literal"><span class="pre"><font><font>confirman</font></font></span></tt><font><font> no almacena y devuelve el fragmento de guión.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ Alerta </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="nv"><font><font>$ este </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>confirm </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'¿Está seguro' </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>prompt ($ mensaje, $ default)</font></font></p>
+<p><font><font>Crear un fragmento de código javascript que contiene un </font></font><tt class="docutils literal"><span class="pre"><font><font>prompt ()</font></font></span></tt><font><font> fragmento. </font><font>De forma predeterminada, </font></font><tt class="docutils literal"><span class="pre"><font><font>símbolo del</font></font></span></tt><font><font> no almacena y devuelve el fragmento de guión.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>Pedirá $ </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>prompt </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'¿Cuál es tu color favorito' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="s1"><font><font>'azul' </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>presentar ()</font></font></p>
+<p><font><font>Crear un botón de envío de entrada que permite </font></font><tt class="docutils literal"><span class="pre"><font><font>XmlHttpRequest</font></font></span></tt><font><font> presentó formas. </font><font>Las opciones pueden incluir</font></font></p>
+<p><font><font>JsBaseEngine :: caso ();</font></font></p>
+<p><font><font>Enviar formularios con este método, no se pueden enviar archivos. </font><font>Los archivos no se transfieren sobre </font></font><tt class="docutils literal"><span class="pre"><font><font>XmlHttpRequest</font></font></span></tt></p>
+<p><font><font>el alcance de este helper.</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>confirmar</font></font></span></tt><font><font> - Confirmar mensaje aparece antes de enviar el pedido. </font><font>El uso de confirmar, no sustituye a ninguna </font></font><tt class="docutils literal"><span class="pre"><font><font>antes de</font></font></span></tt><font><font> los métodos de devolución de llamada en el XmlHttpRequest generado.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>búfer</font></font></span></tt><font><font> - Desactivar el buffering y devolver una etiqueta script además del enlace.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>wrapCallbacks</font></font></span></tt><font><font> - Juego en false para deshabilitar el ajuste de devolución de llamada automática.</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo de uso</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>enviar </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Save' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'update' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'# content' </font></font></span><span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Creará un botón de enviar con un evento onclick adjunto. </font><font>El evento click será amortiguada por defecto.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>submit </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Save' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'update' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'#content' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="s1"><font><font>'div' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>false </font></font></span><span class="p"><font><font>, </font></font></span> <span class="s1"><font><font>'type' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'json' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="s1"><font><font>'async' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>false </font></font></span><span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Muestra cómo se pueden combinar las opciones que tanto </font></font><tt class="docutils literal"><span class="pre"><font><font>FormHelper :: Enviar ()</font></font></span></tt><font><font> y
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>Js :: request ()</font></font></span></tt><font><font> cuando se utiliza en enviar.</font></font></p>
+<p><font><font>enlace ($ title, $ url = null, $ options = array ())</font></font></p>
+<p><font><font>Crear un elemento de anclaje HTML que tiene un evento de clic con destino a la misma. </font><font>Las opciones pueden incluir tanto los de HtmlHelper :: link () y JsBaseEngine :: request (), JsBaseEngine :: caso (); </font></font><tt class="docutils literal"><span class="pre"><font><font>$ htmlAttributes</font></font></span></tt><font><font> se utiliza para especificar opciones adicionales que se supone que se adjunta al elemento de anclaje generado. </font><font>Si una opción no es parte de los atributos estándar o </font></font><tt class="docutils literal"><span class="pre"><font><font>$ htmlAttributes</font></font></span></tt><font><font> será pasado a </font></font><tt class="docutils literal"><span class="pre"><font><font>petición ()</font></font></span></tt><font><font> como una opción. </font><font>Si no se suministra un id, un generado de forma aleatoria se creará uno para cada enlace generado.</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>confirmar</font></font></span></tt><font><font> - Generar un confirm () de diálogo antes de enviar el evento.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>Identificación</font></font></span></tt><font><font> - utilizar un identificador personalizado.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>htmlAttributes</font></font></span></tt><font><font> - htmlAttributes no estándar. </font><font>Atributos estándar son de clase, id, rel, título, escape, onblur y onfocus.</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>búfer</font></font></span></tt><font><font> - Desactivar el buffering y devolver una etiqueta script además del enlace.</font></font></li>
+</ul>
+<p><strong><font><font>Ejemplo de uso</font></font></strong></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>enlace </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Página 2' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'page' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="mi"><font><font>2 </font></font></span><span class="p"><font><font>), </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'update' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'# content' </font></font></span><span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Se creará un enlace que apunta a </font></font><tt class="docutils literal"><span class="pre"><font><font>/ página: 2</font></font></span></tt><font><font> y la actualización # contenta con la respuesta.</font></font></p>
+<p><font><font>Usted puede utilizar el </font></font><tt class="docutils literal"><span class="pre"><font><font>htmlAttributes</font></font></span></tt><font><font> opción de agregar en los atributos personalizados adicionales.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>enlace </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Página 2' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'page' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="mi"><font><font>2 </font></font></span><span class="p"><font><font>), </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+    <span class="s1"><font><font>'update' </font></font></span> <span class="o"><font><font>= &amp; </font></font></span><span class="nx"><font><font>gt </font></font></span><span class="p"><font><font>; </font></font></span> <span class="s1"><font><font>'# content' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'htmlAttributes' </font></font></span> <span class="o"><font><font>= &amp; </font></font></span><span class="nx"><font><font>gt </font></font></span><span class="p"><font><font>; </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'otro ' </font></font></span> <span class="o"><font><font>= &amp; </font></font></span><span class="nx"><font><font>gt </font></font></span><span class="p"><font><font>; </font></font></span> <span class="s1"><font><font>"valor" </font></font></span><span class="p"><font><font>) </font></font></span>
+<span class="p"><font><font>));</font></font></span><font></font>
+<font></font>
+<font></font>
+<span class="c1"><font><font>/ / Crea el siguiente código </font></font></span>
+<span class="o"><font><font>&lt; </font></font></span><span class="nx"><font><font>a </font></font></span> <span class="nx"><font><font>href </font></font></span><span class="o"><font><font>= </font></font></span><span class="s2"><font><font>"/ es / posts / index / página: 2" </font></font></span> <span class="nx"><font><font>otra </font></font></span><span class="o"><font><font>= </font></font></span><span class="s2"><font><font>"valor" </font></font></span><span class="o"><font><font>&gt; </font></font></span><span class="nx"><font><font>Página </font></font></span> <span class="mi"><font><font>2 </font></font></span><span class="o"><font><font>&lt;/ </font></font></span><span class="nx"><font><font>a </font></font></span><span class="o"><font><font>&gt;</font></font></span>
+</pre></div>
+</div>
+<p><font><font>serializeForm ($ opciones = array ())</font></font></p>
+<p><font><font>Serializar el formulario adjunto a $ selector. </font><font>Pase </font></font><tt class="docutils literal"><span class="pre"><font><font>cierto</font></font></span></tt><font><font> por $ ISForm si la selección actual es un elemento de formulario. </font><font>Convierte la forma o el elemento de formulario que se adjunta a la selección actual en un objeto de cadena / json (dependiendo de la implementación de bibliotecas) para su uso con las operaciones XHR.</font></font></p>
+<p><strong><font><font>Opciones</font></font></strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre"><font><font>ISForm</font></font></span></tt><font><font> - es la selección actual una forma, o una entrada? </font><font>(Por defecto es false)</font></font></li>
+<li><tt class="docutils literal"><span class="pre"><font><font>inline</font></font></span></tt><font><font> - va la declaración rendida para ser utilizado dentro de otra declaración JS? </font><font>(Por defecto es false)</font></font></li>
+</ul>
+<p><font><font>Configuración en línea == false le permite eliminar el arrastre </font></font><tt class="docutils literal"><span class="pre"><font><font>;</font></font></span></tt><font><font> . </font><font>Esto es útil cuando se necesita para serializar un elemento de formulario como parte de otra operación de Javascript o utilizar el método serialize en un objeto literal.</font></font></p>
+<p><font><font>redirigir ($ url)</font></font></p>
+<p><font><font>Redireccionar la página a </font></font><tt class="docutils literal"><span class="pre"><font><font>$ url</font></font></span></tt><font><font> utilizando </font></font><tt class="docutils literal"><span class="pre"><font><font>window.location</font></font></span></tt><font><font> .</font></font></p>
+<p><font><font>valor ($ value)</font></font></p>
+<p><font><font>Convierte una variable de PHP nativa de cualquier tipo a una representación JSON equivalente. </font><font>Escapa a cualquier valores de cadena en cadenas compatibles JSON. </font><font>Se escaparon caracteres UTF-8.</font></font></p>
+</div>
+<div class="section" id="ajax-pagination">
+<h2><font><font>Paginación Ajax</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#ajax-pagination" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h2>
+<p><font><font>Al igual que el Ajax de la paginación en 1.2, puede utilizar el JsHelper para manejar la creación de enlaces de paginación Ajax en lugar de enlaces HTML plano.</font></font></p>
+<div class="section" id="making-ajax-links">
+<h3><font><font>Haciendo Links Ajax</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#making-ajax-links" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h3>
+<p><font><font>Para poder crear enlaces ajax debe incluir la librería Javascript que coincide con el adaptador que está utilizando con </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> . </font><font>Por defecto, el
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> utiliza jQuery. </font><font>Así que en su diseño incluir jQuery (o cualquier biblioteca que está utilizando). </font><font>Asimismo, asegúrese de incluir
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>RequestHandlerComponent</font></font></span></tt><font><font> en sus componentes. </font><font>Agregue lo siguiente a su controlador:</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>var </font></font></span> <span class="nv"><font><font>$ components </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'RequestHandler' </font></font></span><span class="p"><font><font>); </font></font></span>
+<span class="k"><font><font>var </font></font></span> <span class="nv"><font><font>$ helpers </font></font></span> <span class="o"><font><font>= </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'Js' </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Siguiente enlace en la biblioteca javascript que desea utilizar. </font><font>Para este ejemplo vamos a usar jQuery.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Html </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>guión </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'jquery' </font></font></span><span class="p"><font><font>);</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Similar a 1.2 Usted necesita decir el </font></font><tt class="docutils literal"><span class="pre"><font><font>PaginatorHelper</font></font></span></tt><font><font> que desea hacer enlaces Javascript mejoradas en lugar de los llanos del HTML. </font><font>Para ello utiliza </font></font><tt class="docutils literal"><span class="pre"><font><font>las opciones ()</font></font></span></tt></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$ This </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Paginator </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Opciones </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+    <span class="s1"><font><font>'update' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'# contenido' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'evalScripts' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>cierto </font></font></span>
+<span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>El </font></font><tt class="docutils literal"><span class="pre"><font><font>PaginatorHelper</font></font></span></tt><font><font> ahora sabe que hacer con javascript mejorado los vínculos, y que esos vínculos debe actualizar la </font></font><tt class="docutils literal"><span class="pre"><font><font># content</font></font></span></tt><font><font> elemento. </font><font>Por supuesto, este elemento debe existir, y muchas veces se desee para envolver
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>$ content_for_layout</font></font></span></tt><font><font> con un div que coincida con el ID utilizado para la
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>actualización de</font></font></span></tt><font><font> la opción. </font><font>También debe establecer </font></font><tt class="docutils literal"><span class="pre"><font><font>evalScripts</font></font></span></tt><font><font> en true si está utilizando los adaptadores Mootools o Prototype, sin </font></font><tt class="docutils literal"><span class="pre"><font><font>evalScripts</font></font></span></tt><font><font> 
+estas bibliotecas no podrán peticiones cadena juntos. </font><font>El
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>indicador de</font></font></span></tt><font><font> la opción no es apoyada por </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> y será ignorado.</font></font></p>
+<p><font><font>A continuación, crea todos los enlaces que sean necesarios para sus funciones de paginación. </font><font>Desde el </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> amortigua automáticamente todo el contenido script generado para reducir el número de </font></font><tt class="docutils literal"><span class="pre"><font><font>&lt;script&gt;</font></font></span></tt><font><font> etiquetas en el código fuente que </font></font><strong><font><font>debe</font></font></strong><font><font> llamar a escribir el buffer de salida. </font><font>En la parte inferior de tu archivo de vista. </font><font>Asegúrese de incluir:</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>writeBuffer </font></font></span><span class="p"><font><font>();</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Si omite esta usted </font></font><strong><font><font>no</font></font></strong><font><font> será capaz de ajax cadena de enlaces de paginación. </font><font>Cuando se escribe el buffer, sino que también está despejado, por lo que no tiene que preocuparse acerca de la misma se emita Javascript dos veces.</font></font></p>
+</div>
+<div class="section" id="adding-effects-and-transitions">
+<h3><font><font>Adición de efectos y transiciones</font></font><a class="headerlink" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#adding-effects-and-transitions" title="Enlazar permanentemente estafa this título"><font><font>¶</font></font></a></h3>
+<p><font><font>Dado que </font></font><tt class="docutils literal"><span class="pre"><font><font>el indicador</font></font></span></tt><font><font> ya no es compatible, debe agregar cualquier efecto indicador por sí mismo.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="o"><font><font>&lt; </font></font></span><span class="nx"><font><font>HTML </font></font></span><span class="o"><font><font>&gt; </font></font></span>
+    <span class="o"><font><font>&lt; </font></font></span><span class="nx"><font><font>cabeza </font></font></span><span class="o"><font><font>&gt; </font></font></span>
+        <span class="o"><font><font>&lt;? </font></font></span><span class="nx"><font><font>php </font></font></span> <span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Html </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>guión </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'jquery' </font></font></span><span class="p"><font><font>); </font></font></span> <span class="cp"><font><font>?&gt;</font></font></span><span class="x"></span>
+<span class="x"><font><font>        . / / Más cosas aquí </font></font></span>
+<span class="x"><font><font>    &lt;/ head&gt; </font></font></span>
+<span class="x"><font><font>    &lt;body&gt; </font></font></span>
+<span class="x"><font><font>    &lt;div id="content"&gt; </font></font></span>
+<span class="x">        </span><span class="cp"><font><font>&lt;php? </font></font></span> <span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ content_for_layout </font></font></span><span class="p"><font><font>; </font></font></span> <span class="cp"><font><font>?&gt;</font></font></span><span class="x"></span>
+<span class="x"><font><font>    &lt;/ Div&gt; </font></font></span>
+<span class="x">    </span><span class="cp"><font><font>&lt;? php </font></font></span> <span class="k"><font><font>echo </font></font></span> <span class="nv"><font><font>$ this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Html </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>imagen </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'indicator.gif' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'id' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'ocupado en indicadores' </font></font></span><span class="p"><font><font>)); </font></font></span> <span class="cp"><font><font>?&gt;</font></font></span><span class="x"></span>
+<span class="x"><font><font>    &lt;/ Body&gt; </font></font></span>
+<span class="x"><font><font>&lt;/ html&gt;</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Recuerde que debe colocar el archivo dentro indicator.gif aplicación Webroot carpeta / / img. </font><font>Usted puede ver una situación donde el indicator.gif muestra inmediatamente después de la carga de la página. </font><font>Es necesario poner en este css
+ </font></font><tt class="docutils literal"><span class="pre"><font><font># ocupada indicador </font></font></span> <span class="pre"><font><font>{ </font></font></span> <span class="pre"><font><font>display: none; </font></font></span> <span class="pre"><font><font>}</font></font></span></tt><font><font> en el archivo principal css.</font></font></p>
+<p><font><font>Con la disposición anterior, hemos incluido un archivo de imagen indicador, que mostrará una animación indicador de actividad que vamos a mostrar y ocultar con el
+ </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> . </font><font>Para hacer eso necesitamos actualizar nuestras </font></font><tt class="docutils literal"><span class="pre"><font><font>opciones ()</font></font></span></tt><font><font> función.</font></font></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Paginator </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>options </font></font></span><span class="p"><font><font>( </font></font></span><span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span>
+    <span class="s1"><font><font>'update' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="s1"><font><font>'#content' </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'evalScripts' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>true </font></font></span><span class="p"><font><font>, </font></font></span>
+    <span class="s1"><font><font>'before' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'#busy-indicator' </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>effect </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'fadeIn' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'buffer' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>false </font></font></span><span class="p"><font><font>)), </font></font></span>
+    <span class="s1"><font><font>'complete' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="nv"><font><font>$this </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>Js </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>get </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'#busy-indicator' </font></font></span><span class="p"><font><font>) </font></font></span><span class="o"><font><font>-&gt; </font></font></span><span class="na"><font><font>effect </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'fadeOut' </font></font></span><span class="p"><font><font>, </font></font></span> <span class="k"><font><font>array </font></font></span><span class="p"><font><font>( </font></font></span><span class="s1"><font><font>'buffer' </font></font></span> <span class="o"><font><font>=&gt; </font></font></span> <span class="k"><font><font>false </font></font></span><span class="p"><font><font>)), </font></font></span>
+<span class="p"><font><font>));</font></font></span>
+</pre></div>
+</div>
+<p><font><font>Esto mostrar / ocultar el elemento ocupado en indicadores antes y después de la
+ </font></font><tt class="docutils literal"><span class="pre"><font><font># contenido</font></font></span></tt><font><font> se actualiza div. </font><font>Aunque </font></font><tt class="docutils literal"><span class="pre"><font><font>el indicador</font></font></span></tt><font><font> se ha eliminado, las nuevas características ofrecidas por </font></font><tt class="docutils literal"><span class="pre"><font><font>JsHelper</font></font></span></tt><font><font> permiten más control y efectos más complejos que se creen.</font></font></p>
+</div>
+</div>
+</div>
+
+
+		</div>
+	</div>
+
+	<div class="sidebar columns three pull-nine">
+<div id="sidebar-navigation" class="hide-on-phones">
+	<h2 class="hide-on-desktops"><font><font>Tabla de contenidos</font></font></h2>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/index.html"><font><font>El manual de</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Beginning-With-CakePHP.html"><font><font>Comenzando estafa CakePHP</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Basic-Principles-of-CakePHP.html"><font><font>Principios Básicos de CakePHP</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Developing-with-CakePHP.html"><font><font>Desarrollando estafa CakePHP</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Common-Tasks-With-CakePHP.html"><font><font>Tareas Comunes estafa CakePHP</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Components.html"><font><font>Componentes del Núcleo</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Behaviors.html"><font><font>Core Behaviors (Comportamientos Basicos)</font></font></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers.html"><font><font>Ayudantes del Core</font></font></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/AJAX.html"><font><font>AJAX</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Cache.html"><font><font>Cache</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Form.html"><font><font>Formularios</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/HTML.html"><font><font>HTML</font></font></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><font><font>Js</font></font></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Javascript.html"><font><font class="goog-text-highlight">Javascript</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Number.html"><font><font>Número</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Paginator.html"><font><font>Paginator</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/RSS.html"><font><font>RSS</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Session.html"><font><font>Sesión</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Text.html"><font><font>Texto</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Time.html"><font><font>Tiempo</font></font></a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/XML.html"><font><font>XML</font></font></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Utility-Libraries.html"><font><font>Librerias de Utilidades del núcleo</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Console-Applications.html"><font><font>Aplicaciones de Consola Principales</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Deployment.html"><font><font>Despliegue</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Tutorials-Examples.html"><font><font>Example de Aplicación</font></font></a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Appendices.html"><font><font>APENDICES</font></font></a></li>
+</ul>
+
+</div>
+
+<div class="page-contents">
+	<h3><font><font>Contenido de la página</font></font></h3>
+	<ul>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#"><font><font>Js</font></font></a><ul>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#using-a-specific-javascript-engine"><font><font>El uso de un motor específico Javascript</font></font></a><ul>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#using-jquery-with-other-libraries"><font><font>Usando jQuery con otras bibliotecas</font></font></a></li>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#using-the-jshelper-inside-customhelpers"><font><font>Usando el JsHelper dentro customHelpers</font></font></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#creating-a-javascript-engine"><font><font>Creación de un motor de Javascript</font></font></a></li>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#javascript-engine-usage"><font><font>Javascript uso del motor</font></font></a><ul>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#common-options"><font><font>Las opciones comunes</font></font></a></li>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#callback-wrapping"><font><font>Embalaje de devolución de llamada</font></font></a></li>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#working-with-buffered-scripts"><font><font>Trabajar con scripts de búfer</font></font></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#methods"><font><font>Métodos</font></font></a></li>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#ajax-pagination"><font><font>Paginación Ajax</font></font></a><ul>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#making-ajax-links"><font><font>Haciendo Links Ajax</font></font></a></li>
+<li><a class="reference internal" href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Js.html#adding-effects-and-transitions"><font><font>Adición de efectos y transiciones</font></font></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+	</div>
+
+</div>
+
+<div class="content row">
+	<ul class="related-pages inline">
+	<li>
+		<a href="http://book.cakephp.org/1.3/es/genindex.html" title="Índice General" accesskey="I"><font><font>Índice</font></font></a>
+	</li>
+	<li>
+		<a href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/Javascript.html" title="Javascript" accesskey="N"><font><font>siguiente</font></font></a>
+	</li>
+	<li>
+		<a href="http://book.cakephp.org/1.3/es/The-Manual/Core-Helpers/HTML.html" title="HTML" accesskey="P"><font><font>anterior</font></font></a>
+	</li>
+	</ul>
+</div>
+
+	<div class="footer-push"> </div>
+</div>
+
+
+
+
+
+
+<div class="footer">
+	<div class="row">
+		<div class="columns six offset-by-three contribute">
+			<strong><font><font>Encontrado un problema?</font></font></strong><font><font> 
+			Someter una corrección en </font></font><a href="https://github.com/cakephp/docs"><font><font>github </font></font></a><br>
+			<a href="http://book.cakephp.org/2.0/en/contributing/documentation.html"><font><font>[documentación sobre cómo contribuir]</font></font></a>
+		</div>
+		<div class="languages columns three">
+			<ul class="languages inline">
+			
+				<li><a href="http://book.cakephp.org/1.3/en/The-Manual/Core-Helpers/Js.html"><font><font>en</font></font></a></li>
+			
+				<li><a href="http://book.cakephp.org/1.3/pt/The-Manual/Core-Helpers/Js.html"><font><font>pt</font></font></a></li>
+			
+				<li><span class="active"><font><font>es</font></font></span></li>
+			
+				<li><a href="http://book.cakephp.org/1.3/ja/The-Manual/Core-Helpers/Js.html"><font><font>ja</font></font></a></li>
+			
+				<li><span class="disabled"><font><font>ru</font></font></span></li>
+			
+				<li><a href="http://book.cakephp.org/1.3/fr/The-Manual/Core-Helpers/Js.html"><font><font>fr</font></font></a></li>
+			
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="columns nine offset-by-three copyright"><font><font>
+					© Copyright 2012, Fundación Cake Software, Inc. Sistema de Puntos Creado estafa </font></font><a href="http://sphinx.pocoo.org/"><font><font>Sphinx</font></font></a><font><font> 1.2.
+		</font></font></div>
+	</div>
+</div>
+
+<div id="nav-modal" class="reveal-modal"> </div>
+<div id="inline-search-results"></div><div id="goog-gt-tt" class="goog-tooltip skiptranslate" dir="ltr" style="visibility: visible; left: 216px; top: 566px; display: block;"><div style="padding: 8px;"><div><div class="logo"><img src="./Js - Documentación de CakePHP Cookbook - 1.3_files/translate-32.png" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texto original</h1></div><div class="middle" style="padding: 8px;"><div class="original-text">Javascript</div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Sugiere una traducción mejor</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+  
+</body></html>

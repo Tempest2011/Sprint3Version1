@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php -->
+<html class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="Including JS in default View in Cake PHP">
+    <meta name="og:description" content="I can do this in any of my View file in Cake PHP:
+
+&amp;lt;?php echo $this-&amp;gt;Html-&amp;gt;script(&#39;myjs.js&#39;, false); ?&amp;gt;
+
+
+but if I do the same thing in my default view (default.ctp) then the JS files d...">
+    <meta name="og:url" content="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php">
+    <link rel="canonical" href="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow.htm">
+
+    
+    
+    <script type="text/javascript" async="" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/ados"></script><script async="" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/quant.js"></script><script async="" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/beacon.js"></script><script async="" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/ados.js"></script><script src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Alimentos para la pregunta &quot;¿Incluyendo JS en mora Ver en Cake PHP &#39;" href="http://stackoverflow.com/feeds/question/8269614">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:8269614});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '8269614');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1399067671,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"23d80a62af3df210e9323f9417085775","isAnonymous":true,"ab":{"welcome_email":{"v":"3","g":1}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"d987e8ba02e8","js/moderator.en.js":"852a9590ae2d","js/full-anon.en.js":"e0135be99202","js/full.en.js":"252aef4827ba","js/wmd.en.js":"d9dc7a9550f9","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"dcf6dd539af8","js/help.en.js":"ceae85b045a1","js/tageditor.en.js":"7f54d0efc81e","js/tageditornew.en.js":"0bf79a6484e0","js/inline-tag-editing.en.js":"d00846e90065","js/revisions.en.js":"9a2b9be85a69","js/review.en.js":"063e88635927","js/tagsuggestions.en.js":"bb4721d888d2","js/post-validation.en.js":"0e52d1a0290c","js/explore-qlist.en.js":"24424eb238e8","js/events.en.js":"203491ffdbd7"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+        
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/prettify-full.en.js"></script><script type="text/javascript" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link href="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"><link type="text/css" rel="stylesheet" charset="UTF-8" href="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/translateelement.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/"><font><font>comunidad actual</font></font></a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:6 })"><font><font>chat en </font></font></a>
+                    <a href="http://blog.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:7 })"><font><font>el blog</font></font></a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div><font><font>
+        Stack Overflow
+    </font></font></a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div><font><font>
+        Meta Stack Overflow
+    </font></font></a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Carreras"></div><font><font>
+                        Empleo 2.0
+                    </font></font></a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3><font><font>
+sus comunidades        </font></font></h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8269614%2fincluding-js-in-default-view-in-cake-php" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })"><font><font>Regístrese</font></font></a><font><font> 
+                    o
+                     </font></font><a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8269614%2fincluding-js-in-default-view-in-cake-php" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })"><font><font>inicie sesión</font></font></a><font><font> 
+
+                    para personalizar la lista.
+            </font></font></div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites"><font><font>más comunidades de cambio de pila</font></font></a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="Una lista de los 123 sitios de Stack Exchange">
+                <span class="hidden-text"><font><font>Pila de Exchange</font></font></span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8269614%2fincluding-js-in-default-view-in-cake-php" class="login-link"><font><font>inscribirse </font></font></a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8269614%2fincluding-js-in-default-view-in-cake-php" class="login-link"><font><font>en el registro del </font></font></a>
+                            <a href="http://stackoverflow.com/tour"><font><font>recorrido </font></font></a>
+
+                            <a href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php#" class="icon-help js-help-button" title="Centro de ayuda y otros recursos"><font><font>
+        de ayuda
+        </font></font><span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                <li>
+                    <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })"><font><font>
+                        Gira
+                         </font></font><span class="item-summary"><font><font>
+                            Comience aquí para una visión rápida del sitio
+                        </font></font></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })"><font><font>
+                        Centro de asistencia de
+                         </font></font><span class="item-summary"><font><font>
+                            respuestas detalladas a las preguntas que pueda tener
+                        </font></font></span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })"><font><font>
+                            Meta
+                             </font></font><span class="item-summary"><font><font>
+                                Discutir el funcionamiento y las políticas de este sitio
+                            </font></font></span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/"><font><font>carreras 2.0</font></font></a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () {
+        //topbar.init();
+        StackExchange.topbar.init();
+    });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/"><font><font>
+                    Stack Overflow
+                </font></font></a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                            <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions"><font><font>Preguntas</font></font></a></li>
+                            <li><a id="nav-tags" href="http://stackoverflow.com/tags"><font><font>Etiquetas</font></font></a></li>
+                            <li><a id="nav-tour" href="http://stackoverflow.com/about"><font><font>Gira</font></font></a></li>
+                            <li><a id="nav-users" href="http://stackoverflow.com/users"><font><font>Usuarios</font></font></a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask"><font><font>Pregunte a la pregunta</font></font></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/about" id="tell-me-more" class="button"><font><font>Tome el tour de 2 minutos </font></font></a>
+            <span id="close"><a title="ocultar mensaje"><font><font>×</font></font></a></span>
+        </span>
+        <div id="blurb"><font><font>
+            Desbordamiento de pila es una pregunta y respuesta para los programadores web profesionales y entusiastas. </font><font>Es 100% gratuito, no es necesario registrarse.
+        </font></font></div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/" });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow.htm" class="question-hyperlink"><font><font>Incluyendo JS en mora Ver en PHP Cake</font></font></a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="8269614" id="question">
+    
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk876627900",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk876627900"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjo1OTIwLCJkaSI6IjVmNTVmMzYyZDM1MTQwZTE5MDhmNmFjMTcwZTIxZTZiIiwiZG0iOjEsImZjIjo4ODA2LCJmbCI6MjQ0NCwia3ciOiJjYWtlcGhwLGNha2VwaHAtMi4wIiwibnciOjIyLCJwYyI6MCwicHIiOjE1NjgsInJ0IjoxLCJzdCI6ODI3NywidWsiOiJ1ZTEtYWMzN2FkNTI1ZWRjNDRlNmFmODI1OGM0NmUxODM5ODYiLCJ6biI6NDMsInRzIjoxMzk5MDY3Njc4ODM2LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&s=rBOMf9MiIFX4voNUM53RwlxKnJg" rel="nofollow" target="_blank" title=""><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/60abb4b317034aa2af0bc697e6f02963.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span><font><font>No hay problema. </font><font>No te vamos a mostrar ese anuncio nuevo. </font><font>¿Por qué no te gusta?</font></font></span><ul><li><label><input type="radio" value="12" name="downvoteReason"><font><font>Poco interesante</font></font></label></li><li><label><input type="radio" value="13" name="downvoteReason"><font><font>Engañoso</font></font></label></li><li><label><input type="radio" value="14" name="downvoteReason"><font><font>Ofensivo</font></font></label></li><li><label><input type="radio" value="15" name="downvoteReason"><font><font>Repetitivo</font></font></label></li></ul><a href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php#" class="adzerk-vote-cancel"><font><font>¡Huy! </font><font>No era mi intención hacerlo.</font></font></a></form></div><img height="0px" width="0px" border="0" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8269614">
+    <a class="vote-up-off" title="Esta pregunta muestra los esfuerzos de investigación;  es útil y clara"><font><font>up vote </font></font></a>
+    <span class="vote-count-post "><font><font>0 </font></font></span>
+    <a class="vote-down-off" title="Esta pregunta no muestra ningún esfuerzo de investigación;  no está claro o no es útil"><font><font>abajo voto </font></font></a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php#" title="Esta es una pregunta favorita (haga clic de nuevo para deshacer)"><font><font>favorita</font></font></a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="description">
+
+        <p><font><font>Puedo hacer esto en cualquiera de mi Ver archivo en Cake PHP:</font></font></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pun"><font><font>&lt;? </font></font></span><span class="pln"><font><font>php echo $ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="typ"><font><font>Html </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>guión </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'myjs.js' </font></font></span><span class="pun"><font><font>, </font></font></span><span class="pln"> </span><span class="kwd"><font><font>falsas </font></font></span><span class="pun"><font><font>); </font></font></span><span class="pln"> </span><span class="pun"><font><font>?&gt;</font></font></span></code></pre>
+
+<p><font><font>pero si lo hago lo mismo en mi punto de vista por defecto ( </font></font><code><font><font>default.ctp</font></font></code><font><font> ), entonces los archivos de JS no cargan es decir, que no se les hicieron eco. </font><font class="">He tratado de movimiento incluye encima y por debajo </font></font><code><font><font class="">&lt;php echo $ scripts_for_layout?&gt;</font></font></code><font><font class=""> en la vista predeterminada pero aún no recibo impreso:</font></font></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pun"><font><font>&lt;? </font></font></span><span class="pln"><font><font>php echo $ scripts_for_layout </font></font></span><span class="pun"><font><font>&gt; </font></font></span><span class="pln">  
+</span><span class="pun"><font><font>&lt;? </font></font></span><span class="pln"><font><font>php echo $ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="typ"><font><font>Html </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>guión </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'myjs.js' </font></font></span><span class="pun"><font><font>); </font></font></span><span class="pln"> </span><span class="pun"><font><font>?&gt;</font></font></span><span class="pln"><font></font>
+<font></font>
+</span><span class="pun"><font><font>&lt;? </font></font></span><span class="pln"><font><font>php echo $ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="typ"><font><font>Html </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>guión </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'myjs.js' </font></font></span><span class="pun"><font><font>); </font></font></span><span class="pln"> </span><span class="pun"><font><font>?&gt; </font></font></span><span class="pln">
+</span><span class="pun"><font><font>? &lt; </font></font></span><span class="pln"><font><font>php echo $ scripts_for_layout </font></font></span><span class="pun"><font><font>&gt;</font></font></span><span class="pln">  </span></code></pre>
+
+<p><font><font>¿Alguna idea?</font></font></p>
+
+<p><font><font>Gracias :). </font></font></p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/cakephp" class="post-tag js-gps-track" title="Mostrar preguntas etiquetadas &#39;cakephp&#39;" rel="tag"><font><font>cakephp </font></font></a> <a href="http://stackoverflow.com/questions/tagged/cakephp-2.0" class="post-tag js-gps-track" title="Mostrar preguntas etiquetadas &#39;cakephp-2.0&#39;" rel="tag"><font><font>cakephp-2.0</font></font></a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/8269614" title="corto enlace permanente a esta pregunta" class="short-link" id="link-post-8269614"><font><font>compartir </font></font></a><span class="lsep"><font><font>| </font></font></span><a href="http://stackoverflow.com/posts/8269614/edit" class="suggest-edit-post" title=""><font><font>mejorar esta pregunta</font></font></a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time"><font><font>
+        preguntó </font></font><span title="2011-11-25 13:08:40 Z" class="relativetime"><font><font>25 de noviembre '11 a las 13:08</font></font></span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/478513/ale"><div><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/551ec373db274dec3c317c165ed47da8" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/478513/ale"><font><font>ale </font></font></a><br>
+        <span class="reputation-score" title="puntuación de reputación " dir="ltr"><font><font>2915</font></font></span><span title="4 insignias de oro"><span class="badge1"></span><span class="badgecount"><font><font>4</font></font></span></span><span title="31 insignias de plata"><span class="badge2"></span><span class="badgecount"><font><font>31</font></font></span></span><span title="78 placas de bronce"><span class="badge3"></span><span class="badgecount"><font><font>78</font></font></span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8269614" class="comments dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-8269614" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use los comentarios para pedir más información o sugerir mejoras.  Evite responder a las preguntas en los comentarios."><font><font>añadir comentarios</font></font></a>
+    </td>
+</tr>            </tbody></table>    
+</div>
+
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2><font><font>
+								4 Respuestas
+						</font></font></h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php?answertab=active#tab-top" title="Respuestas con la actividad más reciente primero"><font><font>activos </font></font></a>
+        <a href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php?answertab=oldest#tab-top" title="Respuestas en el orden en que se proporcionaron"><font><font>más antiguos </font></font></a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php?answertab=votes#tab-top" title="Respuestas con la puntuación más alta primero"><font><font>votos</font></font></a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="8269768"></a>
+<div id="answer-8269768" class="answer accepted-answer" data-answerid="8269768">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8269768">
+    <a class="vote-up-off" title="Esta respuesta es útil"><font><font>up vote </font></font></a>
+    <span class="vote-count-post "><font><font>1 </font></font></span>
+    <a class="vote-down-off" title="Esta respuesta no es útil"><font><font>por votación </font></font></a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="cargar cuando se aceptó esta respuesta ..."><font><font>aceptado</font></font></span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text">
+            <p><font><font>Tengo un proyecto con scripts añadido justo antes $ scripts_for_layout y se muestran bien. </font><font>La única diferencia es que yo no estoy añadiendo la extensión js a la convocatoria, así.:</font></font></p>
+
+<p><font><font>default.ctp:</font></font></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="tag"><font><font>&lt;head&gt; </font></font></span><span class="pln">
+    </span><span class="pun"><font><font>&lt;? </font></font></span><span class="pln"><font><font>php echo $ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="typ"><font><font>Html </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>charset </font></font></span><span class="pun"><font><font>(); </font></font></span><span class="pln"> </span><span class="pun"><font><font>?&gt; </font></font></span><span class="pln">
+    </span><span class="tag"><font><font>&lt;title&gt; </font></font></span><span class="pln">
+        </span><span class="pun"><font><font>? &lt; </font></font></span><span class="pln"><font><font>php echo </font></font></span><span class="str"><font><font>"Sitio&gt; $ title_for_layout" </font></font></span><span class="pun"><font><font>; </font></font></span><span class="pln"> </span><span class="pun"><font><font>?&gt; </font></font></span><span class="pln">
+    </span><span class="tag"><font><font>&lt;/ title&gt; </font></font></span><span class="pln">
+</span><span class="pun"><font><font>? &lt; </font></font></span><span class="pln"><font><font>php    </font></font><font></font><font><font>
+  echo $ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="typ"><font><font>Html </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>guión </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'jquery-1.6.4' </font></font></span><span class="pun"><font><font>); </font></font></span><span class="pln"><font><font>
+  echo $ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="typ"><font><font>Html </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>guión </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'jquery-ui-1.8.16.custom.min' </font></font></span><span class="pun"><font><font>); </font></font></span><span class="pln"><font><font>
+  echo $ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="typ"><font><font>Html </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>guión </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'mercado' </font></font></span><span class="pun"><font><font>); </font></font></span><span class="pln"><font><font>
+  echo $ scripts_for_layout </font></font></span><span class="pun"><font><font>; </font></font></span><span class="pln">
+</span><span class="pun"><font><font>?&gt; </font></font></span><span class="pln">
+</span><span class="tag"><font><font>&lt;/ head&gt;</font></font></span></code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8269768" title="corto enlace a esta respuesta" class="short-link" id="link-post-8269768"><font><font>compartir </font></font></a><span class="lsep"><font><font>| </font></font></span><a href="http://stackoverflow.com/posts/8269768/edit" class="suggest-edit-post" title=""><font><font>mejorar esta respuesta</font></font></a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time"><font><font>
+        respondido </font></font><span title="2011-11-25 13:21:20 Z" class="relativetime"><font><font>25 de noviembre '11 a las 13:21</font></font></span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1035635/petervaz"><div><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/7d93caa53e30f60d92a43aa0669e0f55" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1035635/petervaz"><font><font>petervaz </font></font></a><br>
+        <span class="reputation-score" title="puntuación de reputación " dir="ltr"><font><font>945</font></font></span><span title="4 insignias de plata"><span class="badge2"></span><span class="badgecount"><font><font>4</font></font></span></span><span title="13 placas de bronce"><span class="badge3"></span><span class="badgecount"><font><font>13</font></font></span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8269768" class="comments" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+    <tr id="comment-10180224" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><font><font>Gracias .. el problema era que no tenía </font></font><code><font><font>falsa</font></font></code><font><font> como un segundo argumento para </font></font><code><font><font>la escritura (...)</font></font></code><font><font> . </font><font>Acabo de dejar a cabo y todo funcionó bien. </font><font>Gracias.</font></font></span><font><font> 
+                -&nbsp;
+                     </font></font><a href="http://stackoverflow.com/users/478513/ale" title="2915 reputación" class="comment-user owner"><font><font>ale </font></font></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php#comment10180224_8269768"><span title="2011-11-25 13:50:48 Z" class="relativetime-clean"><font><font>25 de noviembre '11 a las 13:50</font></font></span></a></span>
+                                                                            </div>
+        </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-8269768" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use los comentarios para pedir más información o sugerir mejoras.  Evite comentarios como &quot;1&quot; o &quot;gracias&quot;."><font><font>añadir comentarios</font></font></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk340643534",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk340643534"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjoxMDc2OCwiZGkiOiI4MzAzYjU1NmE4MjE0ZDQxOWE4Y2NkZjFlZTRkZDEwNCIsImRtIjoxLCJmYyI6MTY4ODUsImZsIjoyNDQ0LCJrdyI6ImNha2VwaHAsY2FrZXBocC0yLjAiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInN0Ijo4Mjc3LCJ1ayI6InVlMS1hYzM3YWQ1MjVlZGM0NGU2YWY4MjU4YzQ2ZTE4Mzk4NiIsInpuIjo0NCwidHMiOjEzOTkwNjc2Nzg4MzgsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vam9icy90ZWxlY29tbXV0ZSJ9&s=xRZ1-XHoGACUpVZfquR_buP92aI" rel="nofollow" target="_blank" title=""><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/a61df59863ed44e59446d0b9bb805c56.jpg" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span><font><font>No hay problema. </font><font>No te vamos a mostrar ese anuncio nuevo. </font><font>¿Por qué no te gusta?</font></font></span><ul><li><label><input type="radio" value="12" name="downvoteReason"><font><font>Poco interesante</font></font></label></li><li><label><input type="radio" value="13" name="downvoteReason"><font><font>Engañoso</font></font></label></li><li><label><input type="radio" value="14" name="downvoteReason"><font><font>Ofensivo</font></font></label></li><li><label><input type="radio" value="15" name="downvoteReason"><font><font>Repetitivo</font></font></label></li></ul><a href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php#" class="adzerk-vote-cancel"><font><font>¡Huy! </font><font>No era mi intención hacerlo.</font></font></a></form></div><img height="0px" width="0px" border="0" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="8270051"></a>
+<div id="answer-8270051" class="answer" data-answerid="8270051">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8270051">
+    <a class="vote-up-off" title="Esta respuesta es útil"><font><font>up vote </font></font></a>
+    <span class="vote-count-post "><font><font>3 </font></font></span>
+    <a class="vote-down-off" title="Esta respuesta no es útil"><font><font>por voto</font></font></a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text">
+            <p><font><font>con o sin extensión - esto no es la razón por la que el guión no te dejes hizo eco, </font></font></p>
+
+<p><font><font>como </font></font><strong><font><font>mensch</font></font></strong><font><font> mencionado antes no hay diferencia, debido a:</font></font></p>
+
+<p><font><font>fuente de auxiliar HTML cakephp 2</font></font></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="kwd"><font><font>si </font></font></span><span class="pln"> </span><span class="pun"><font><font>( </font></font></span><span class="pln"><font><font>strpos </font></font></span><span class="pun"><font><font>( </font></font></span><span class="pln"><font><font>$ url </font></font></span><span class="pun"><font><font>, </font></font></span><span class="pln"> </span><span class="str"><font><font>'?' </font></font></span><span class="pun"><font><font>) </font></font></span><span class="pln"> </span><span class="pun"><font><font>=== </font></font></span><span class="pln"> </span><span class="kwd"><font><font>false </font></font></span><span class="pln"> </span><span class="pun"><font><font>&amp;&amp; </font></font></span><span class="pln"><font><font>substr </font></font></span><span class="pun"><font><font>( </font></font></span><span class="pln"><font><font>$ url </font></font></span><span class="pun"><font><font>, </font></font></span><span class="pln"> </span><span class="pun"><font><font>- </font></font></span><span class="lit"><font><font>3 </font></font></span><span class="pun"><font><font>) </font></font></span><span class="pln"> </span><span class="pun"><font><font>​​==! </font></font></span><span class="pln"> </span><span class="str"><font><font>'js.' </font></font></span><span class="pun"><font><font>) </font></font></span><span class="pln"> </span><span class="pun"><font><font>{ </font></font></span><span class="pln"><font><font>
+  $ url </font></font></span><span class="pun"><font><font>=. </font></font></span><span class="pln"> </span><span class="str"><font><font>'js. " </font></font></span><span class="pun"><font><font>; </font></font></span><span class="pln">
+</span><span class="pun"><font><font>}</font></font></span></code></pre>
+
+<p><font><font class="">la razón es: ya ha insertado este script dentro de su punto de vista, </font></font></p>
+
+<p><font><font>cheques de pastel si el guión ya está insertado en la página</font></font></p>
+
+<blockquote>
+  <p><font><font>opciones - 'una vez' - Sea o no la secuencia de comandos se debe comprobar la unicidad. </font><font>Si los scripts verdaderos sólo se incluirán una vez, utilice falsa para permitir que el mismo guión que se incluya más de una vez por solicitud.</font></font></p>
+</blockquote>
+
+<p><font><font>por defecto el valor de </font></font><strong><font><font>una vez</font></font></strong><font><font> se establece en TRUE</font></font></p>
+
+<p><font><font>eliminar el script desde su punto de vista primero y luego tratar con o sin '. js'</font></font></p>
+
+<p><font><font>PS: ¿por qué la </font></font><strong><font><font>petervaz</font></font></strong><font><font> respuesta ha trabajado para usted, porque esta comprobación:</font></font></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="kwd"><font><font>si </font></font></span><span class="pln"> </span><span class="pun"><font><font>( </font></font></span><span class="pln"><font><font>$ options </font></font></span><span class="pun"><font><font>[ </font></font></span><span class="str"><font><font>'once' </font></font></span><span class="pun"><font><font>] </font></font></span><span class="pln"> </span><span class="pun"><font><font>&amp;&amp; </font></font></span><span class="pln"><font><font>isset </font></font></span><span class="pun"><font><font>( </font></font></span><span class="pln"><font><font>$ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>__includedScripts </font></font></span><span class="pun"><font><font>[ </font></font></span><span class="pln"><font><font>$ url </font></font></span><span class="pun"><font><font>])) </font></font></span><span class="pln"> </span><span class="pun"><font><font>{ </font></font></span><span class="pln">
+    </span><span class="kwd"><font><font>retorno </font></font></span><span class="pln"> </span><span class="kwd"><font><font>nulo </font></font></span><span class="pun"><font><font>; </font></font></span><span class="pln">
+</span><span class="pun"><font><font>}</font></font></span></code></pre>
+
+<p><font><font>hecho antes de la llegada para la extensión de archivo</font></font></p>
+
+<p><font><font>así </font></font><code><font><font>isset (__includedScripts ['myjs']) == false / / porque primero fue clave __ includedScripts ['myjs.js']</font></font></code></p>
+
+<p><font><font>y usted tiene la secuencia de comandos incluido</font></font></p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8270051" title="corto enlace a esta respuesta" class="short-link" id="link-post-8270051"><font><font>compartir </font></font></a><span class="lsep"><font><font>| </font></font></span><a href="http://stackoverflow.com/posts/8270051/edit" class="suggest-edit-post" title=""><font><font>mejorar esta respuesta</font></font></a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8270051/revisions" title="mostrar todos los cambios a este post"><font><font>editado </font></font><span title="2011-11-25 13:56:01 Z" class="relativetime"><font><font>25 de noviembre '11 a las 13:56</font></font></span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time"><font><font>
+        respondido </font></font><span title="2011-11-25 13:47:41 Z" class="relativetime"><font><font>25 de noviembre '11 a las 13:47</font></font></span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/993431/irishka"><div><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/547c0c70b8c87ad85453f85369303288" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/993431/irishka"><font><font>Irishka </font></font></a><br>
+        <span class="reputation-score" title="puntuación de reputación " dir="ltr"><font><font>872</font></font></span><span title="2 insignias de plata"><span class="badge2"></span><span class="badgecount"><font><font>2</font></font></span></span><span title="8 insignias de bronce"><span class="badge3"></span><span class="badgecount"><font><font>8</font></font></span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8270051" class="comments" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+    <tr id="comment-10180365" class="comment">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>   
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><font><font>Respuesta Muy completo! </font><font>Yo estaba bajo la impresión de que ya alemaster utiliza la llamada de la escritura sin la opción una vez que se establece en false en base a su último bloque de código.</font></font></span><font><font> 
+                -&nbsp;
+                     </font></font><a href="http://stackoverflow.com/users/196750/mensch" title="2965 reputación" class="comment-user"><font><font>mensch </font></font></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php#comment10180365_8270051"><span title="2011-11-25 13:58:19 Z" class="relativetime-clean"><font><font>25 de noviembre '11 a las 13:58</font></font></span></a></span>
+                    <span class="edited-yes" title="Este comentario ha sido editado 1 vez"></span>
+                                                                            </div>
+        </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-8270051" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use los comentarios para pedir más información o sugerir mejoras.  Evite comentarios como &quot;1&quot; o &quot;gracias&quot;."><font><font>añadir comentarios</font></font></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="13840363"></a>
+<div id="answer-13840363" class="answer" data-answerid="13840363">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="13840363">
+    <a class="vote-up-off" title="Esta respuesta es útil"><font><font>up vote </font></font></a>
+    <span class="vote-count-post "><font><font>1 </font></font></span>
+    <a class="vote-down-off" title="Esta respuesta no es útil"><font><font>por votación</font></font></a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text">
+            <p><font><font>Otra cosa duda recomiendo es comprobar que la carga de sus JS en una vista es 100% OK con todo.</font></font></p>
+
+<p><font><font>NO use $ this-&gt; Html-&gt; secuencia de comandos si no está seguro acerca de:</font></font></p>
+
+<p><font><font>--- La dependencia de secuencias de comandos en sí</font></font></p>
+
+<p><font><font>--- La dependencia de algunos plugins en otras escrituras</font></font></p>
+
+<p><font><font>--- La cantidad de diferentes diseños y / o puntos de vista que desee utilizar en el futuro.</font></font></p>
+
+<p><font><font>Por ejemplo, algunos plugins utilizan jQuery jQuery pero requieren que se carga antes que el propio plugin.</font></font></p>
+
+<p><font><font>Así que si usted pone jQuery en una vista o el diseño, JS cargas del plugin antes de jQuery y el plugin no funcionen. </font><font>Si desea asegurarse de que algunas cargas de guión primero, puede intentar lo siguiente:</font></font></p>
+
+<p><font><font>en su aplicación / View / Helper / AppHelper.php:</font></font></p>
+
+<pre class="default prettyprint prettyprinted" style=""><code><span class="kwd"><font><font>clase </font></font></span><span class="pln"> </span><span class="typ"><font><font>AppHelper </font></font></span><span class="pln"> </span><span class="kwd"><font><font>extiende </font></font></span><span class="pln"> </span><span class="typ"><font><font>Helper </font></font></span><span class="pln"> </span><span class="pun"><font><font>{ </font></font></span><span class="pln">
+    </span><span class="kwd"><font><font>público </font></font></span><span class="pln"><font><font>$ helpers </font></font></span><span class="pun"><font><font>= </font></font></span><span class="pln"><font><font>array </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'html' </font></font></span><span class="pun"><font><font>, </font></font></span><span class="pln"> </span><span class="str"><font><font>'Sesión' </font></font></span><span class="pun"><font><font>);</font></font></span><span class="pln"><font></font>
+<font></font>
+    </span><span class="kwd"><font><font>público </font></font></span><span class="pln"> </span><span class="kwd"><font><font>la función </font></font></span><span class="pln"><font><font>beforeRender </font></font></span><span class="pun"><font><font>( </font></font></span><span class="pln"><font><font>$ viewFile </font></font></span><span class="pun"><font><font>) { </font></font></span><span class="pln"><font><font>
+            echo $ this </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="typ"><font><font>Html </font></font></span><span class="pun"><font><font>-&gt; </font></font></span><span class="pln"><font><font>guión </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'jquery' </font></font></span><span class="pun"><font><font>, </font></font></span><span class="pln"><font><font>array </font></font></span><span class="pun"><font><font>( </font></font></span><span class="str"><font><font>'inline' </font></font></span><span class="pun"><font><font>=&gt; </font></font></span><span class="kwd"><font><font>true </font></font></span><span class="pun"><font><font>)); </font></font></span><span class="pln">
+        </span><span class="pun"><font><font>} </font></font></span><span class="pln">
+</span><span class="pun"><font><font>}</font></font></span></code></pre>
+
+<p><font><font>Por lo tanto usted no tiene que incluir jQuery en múltiples puntos de vista y se carga por primera vez.</font></font></p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/13840363" title="corto enlace a esta respuesta" class="short-link" id="link-post-13840363"><font><font>compartir </font></font></a><span class="lsep"><font><font>| </font></font></span><a href="http://stackoverflow.com/posts/13840363/edit" class="suggest-edit-post" title=""><font><font>mejorar esta respuesta</font></font></a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/13840363/revisions" title="mostrar todos los cambios a este post"><font><font>editado </font></font><span title="2012-12-21 13:13:07 Z" class="relativetime"><font><font>21 de diciembre '12 a las 13:13</font></font></span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time"><font><font>
+        respondido </font></font><span title="2012-12-12 12:59:34 Z" class="relativetime"><font><font>12 de diciembre '12 a las 12:59</font></font></span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1334546/marcus33cz"><div><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/3e0965363fc2fdf4a2df2077c0747992" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1334546/marcus33cz"><font><font>marcus33cz </font></font></a><br>
+        <span class="reputation-score" title="puntuación de reputación " dir="ltr"><font><font>21</font></font></span><span title="3 placas de bronce"><span class="badge3"></span><span class="badgecount"><font><font>3</font></font></span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-13840363" class="comments dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-13840363" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use los comentarios para pedir más información o sugerir mejoras.  Evite comentarios como &quot;1&quot; o &quot;gracias&quot;."><font><font>añadir comentarios</font></font></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="8269838"></a>
+<div id="answer-8269838" class="answer" data-answerid="8269838">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8269838">
+    <a class="vote-up-off" title="Esta respuesta es útil"><font><font>up vote </font></font></a>
+    <span class="vote-count-post "><font><font>0 </font></font></span>
+    <a class="vote-down-off" title="Esta respuesta no es útil"><font><font>por voto</font></font></a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text">
+            <p><code><font><font>$ Scripts_for_layout</font></font></code><font><font> en un diseño es un marcador de posición para todas las secuencias de comandos incluidas en las vistas, así que si incluirlo o no, no tendrá ningún efecto si carga los scripts directamente en el </font></font><code><font><font>default.ctp</font></font></code><font><font> .</font></font></p>
+
+<p><font><font>Dicho esto, añadiendo la extensión o dejándolo fuera del </font></font><code><font><font>$ this-&gt; Html-&gt; guión ()</font></font></code><font><font> llamada no debe hacer una diferencia. </font><font>¿Cuál podría ser el caso es que el HtmlHelper no se llama correctamente (se llama por defecto en Cake 2.0), pero usted debe estar recibiendo mensajes de error. </font><font>¿Está de depuración establece en 2 en </font></font><code><font><font>/ app / config / core.php</font></font></code><font><font> ?</font></font></p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8269838" title="corto enlace a esta respuesta" class="short-link" id="link-post-8269838"><font><font>compartir </font></font></a><span class="lsep"><font><font>| </font></font></span><a href="http://stackoverflow.com/posts/8269838/edit" class="suggest-edit-post" title=""><font><font>mejorar esta respuesta</font></font></a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8269838/revisions" title="mostrar todos los cambios a este post"><font><font>editado </font></font><span title="2011-11-25 13:34:12 Z" class="relativetime"><font><font>25 de noviembre '11 a las 13:34</font></font></span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time"><font><font>
+        respondido </font></font><span title="2011-11-25 13:27:02 Z" class="relativetime"><font><font>25 de noviembre '11 a las 13:27</font></font></span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/196750/mensch"><div><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/47a3c1349e1902c77a5cc1848638ca59" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/196750/mensch"><font><font>mensch </font></font></a><br>
+        <span class="reputation-score" title="puntuación de reputación " dir="ltr"><font><font>2965</font></font></span><span title="2 insignias de oro"><span class="badge1"></span><span class="badgecount"><font><font>2</font></font></span></span><span title="14 insignias de plata"><span class="badge2"></span><span class="badgecount"><font><font>14</font></font></span></span><span title="34 placas de bronce"><span class="badge3"></span><span class="badgecount"><font><font>34</font></font></span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8269838" class="comments dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-8269838" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use los comentarios para pedir más información o sugerir mejoras.  Evite comentarios como &quot;1&quot; o &quot;gracias&quot;."><font><font>añadir comentarios</font></font></a>
+    </td>
+</tr>
+    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/8269614/answer/submit" method="post" class="post-form">
+							<input type="hidden" id="post-id" value="8269614">
+							<h2 class="space"><font><font>Tu respuesta</font></font></h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;"><font><font>borrador guardado</font></font></div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;"><font><font>proyecto descartado</font></font></div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="23d80a62af3df210e9323f9417085775">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3><font><font>Date de alta o </font></font><a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f8269614%2fincluding-js-in-default-view-in-cake-php%23new-answer"><font><font>inicia sesión en</font></font></a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span><font><font>Registrarse usando Google</font></font></span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span><font><font>Registrarse usando Facebook</font></font></span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span><font><font>Registrarse usando Stack Intercambio</font></font></span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <font><font><input type="button" class="submit-openid" value="Presentar" style="display:none"></font></font>
+                    <div class="new-login-right">
+                                <h3><font><font>Publique como invitado</font></font></h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name"><font><font>Nombre</font></font></label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address"><font><font>Email</font></font></label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay"><font><font>requerida, pero no se muestra</font></font></span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f8269614%2fincluding-js-in-default-view-in-cake-php%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<font><font><input id="submit-button" type="submit" value="Publicar tu respuesta" tabindex="110"></font></font>
+									<a href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php#" class="discard-answer dno"><font><font>descartar</font></font></a>
+
+<p class="privacy-policy-agreement"><font><font>
+Mediante la publicación de su respuesta, usted está de acuerdo con la </font></font><a href="http://stackexchange.com/legal/privacy-policy" target="_blank"><font><font>política de privacidad</font></font></a><font><font> y </font></font><a href="http://stackexchange.com/legal/terms-of-service" target="_blank"><font><font>términos de servicio</font></font></a><font><font> .</font></font></p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice"><font><font>
+No es la respuesta que estás buscando? </font><font>Examinar cuestiones etiquetados </font></font><a href="http://stackoverflow.com/questions/tagged/cakephp" class="post-tag" title="Mostrar preguntas etiquetadas &#39;cakephp&#39;" rel="tag"><font><font>cakephp </font></font></a> <a href="http://stackoverflow.com/questions/tagged/cakephp-2.0" class="post-tag" title="Mostrar preguntas etiquetadas &#39;cakephp-2.0&#39;" rel="tag"><font><font>cakephp-2.0</font></font></a><font><font>   o </font></font><a href="http://stackoverflow.com/questions/ask"><font><font>pregunte a su propia pregunta</font></font></a><font><font> .						</font></font></h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key"><font><font>preguntó</font></font></p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2011-11-25 13:08:40 Z"><b><font><font>Hace 2 años</font></font></b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key"><font><font>visto</font></font></p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b><font><font>2676 veces</font></font></b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key"><font><font>activo</font></font></p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php?lastactivity" class="lastactivity-link" title="2012-12-21 13:13:07 Z"><font><font>Hace 1 año</font></font></a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk1873306517",17).setZone(45) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1873306517"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImNtIjo4NDcsImNoIjoxMTc4LCJjciI6OTMzNiwiZGkiOiJiODgyM2ExMWJjMDQ0MGM5YTNkYjY2MzFkM2MyYzA4NiIsImRtIjoxLCJmYyI6MTQ4NDYsImZsIjoyNDQ0LCJrdyI6ImNha2VwaHAsY2FrZXBocC0yLjAiLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInN0Ijo4Mjc3LCJ1ayI6InVlMS1hYzM3YWQ1MjVlZGM0NGU2YWY4MjU4YzQ2ZTE4Mzk4NiIsInpuIjo0NSwidHMiOjEzOTkwNjc2Nzg4NDEsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vIn0&s=AsMhJv2cPqL4fw9qLTnmuLSatk8" rel="nofollow" target="_blank" title=""><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/d18eea9d28f3490b8dcbfa9e38f8336e.jpg" title="" alt="" border="0" width="220" height="250"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span><font><font>No hay problema. </font><font>No te vamos a mostrar ese anuncio nuevo. </font><font>¿Por qué no te gusta?</font></font></span><ul><li><label><input type="radio" value="12" name="downvoteReason"><font><font>Poco interesante</font></font></label></li><li><label><input type="radio" value="13" name="downvoteReason"><font><font>Engañoso</font></font></label></li><li><label><input type="radio" value="14" name="downvoteReason"><font><font>Ofensivo</font></font></label></li><li><label><input type="radio" value="15" name="downvoteReason"><font><font>Repetitivo</font></font></label></li></ul><a href="http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php#" class="adzerk-vote-cancel"><font><font>¡Huy! </font><font>No era mi intención hacerlo.</font></font></a></form></div><img height="0px" width="0px" border="0" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/i(2).gif"></div>  
+    <div id="hireme" class="flat-gray">  <a href="http://careers.stackoverflow.com/?a=tPO" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/53215/functional-designers-m-f-in-business-allianz-managed-operations?a=12TUcfIu4" target="_blank" title="Diseñadores funcionales (m / f) en la transformación del negocio de Allianz Managed Operaciones y Servicios SE (AMOS).  Haga clic aquí para obtener más información."><font><font>Diseñadores funcionales (m / f) en la transformación del negocio </font><span class="company"><font>Allianz Managed Operaciones y ... </font></span><span class="location"><font>Múnich, Alemania</font></span></font><br> <span class="company"><font></font></span> <span class="location"><font></font></span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/54187/software-engineer-objective-c-sdk-twitter?a=145mJxj1K" target="_blank" title="Ingeniero de Software - Objective-C/SDK en Twitter.  Haga clic aquí para obtener más información."><font><font>Ingeniero de Software - Objective-C/SDK </font><span class="company"><font>Twitter </font></span><span class="location"><font>San Francisco, CA</font></span></font><br> <span class="company"><font></font></span> <span class="location"><font></font></span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/53892/mysql-database-engineer-behance-now-adobe?a=13J3Ji0CI" target="_blank" title="MySQL Database Engineer en Behance (ahora Adobe).  Haga clic aquí para obtener más información."><font><font>MySQL Database Engineer </font><span class="company"><font>Behance (ahora Adobe) </font></span><span class="location"><font>Nueva York, NY / reubicación</font></span></font><br> <span class="company"><font></font></span> <span class="location"><font></font></span> </a> </li> </ul> <img alt="" class="impression" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/145mJxj1K-12TUcfIu4-13J3Ji0CI-tPO" style="display:none"></div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related"><font><font>Conexo</font></font></h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8918888?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/8918888/use-php-as-external-javascript-file-in-cakephp-2-0?rq=1" class="question-hyperlink"><font><font>Utilice php como archivo externo javascript en CakePHP 2.0</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9363518?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/9363518/how-to-pass-database-record-from-controller-to-view-in-cakephp?rq=1" class="question-hyperlink"><font><font>Cómo pasar registro de la base de Controller a Vista en CakePHP</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10487203?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/10487203/cake-php-email-helper-internal-error?rq=1" class="question-hyperlink"><font><font>pastel php email ayudante - error interno</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/12934072?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/12934072/trouble-getting-cake-php-jshelper-to-work?rq=1" class="question-hyperlink"><font><font>Problemas para quedar Cake PHP JsHelper para trabajar</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13554359?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/13554359/cake-php-login-element?rq=1" class="question-hyperlink"><font><font>Cake PHP Login Element</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13572948?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/13572948/cakephp-this-app-js-gives-fatal-error-in-view?rq=1" class="question-hyperlink"><font><font>CakePHP $ this-&gt; App-&gt; js () da error grave en la vista</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13820625?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/13820625/cakephp-is-unwantedly-encoding-html-entities-in-view-output-via-exceptionrendere?rq=1" class="question-hyperlink"><font><font>CakePHP es unwantedly entidades codificación HTML en la vista de salida a través ExceptionRenderer</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/14923624?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes default"><font><font>2
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/14923624/why-wont-my-flash-message-show-cake-php-2-0?rq=1" class="question-hyperlink"><font><font>¿Por qué no mostrar mi mensaje flash? </font><font>(Cake PHP 2.0)</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17603943?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/17603943/returning-mysql-data-to-cakephp-view?rq=1" class="question-hyperlink"><font><font>Volviendo de datos MySQL a la vista cakephp</font></font></a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/22507365?rq=1" title="Puntuación de voto (upvotes - downvotes)">
+    <div class="answer-votes default"><font><font>0
+    </font></font></div>
+</a><a href="http://stackoverflow.com/questions/22507365/add-admin-prefix-in-usermgmt-plugin-in-cake-php?rq=1" class="question-hyperlink"><font><font>Añadir prefijo admin en el plugin usermgmt en pastel php</font></font></a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })"><font><font>
+            Preguntas Red Hot
+        </font></font></a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-pm" title="Gestión de Proyectos Stack Intercambio"></div><a href="http://pm.stackexchange.com/questions/11458/vision-vs-requirements-vs-design-vs-specification" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:208 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Visión vs Requisitos vs Diseño vs Especificaciones
+                </font></font></a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-philosophy" title="Filosofía Stack Intercambio"></div><a href="http://philosophy.stackexchange.com/questions/11154/gun-control-vs-drunk-driving" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:265 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Control de armas contra Conductores Ebrios
+                </font></font></a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Intercambio"></div><a href="http://academia.stackexchange.com/questions/20144/is-there-independent-oversight-of-journal-impact-factors" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    ¿Existe una supervisión independiente de los factores de Diario de Impacto?
+                </font></font></a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-money" title="Finanzas personales y Dinero Stack Intercambio"></div><a href="http://money.stackexchange.com/questions/30438/is-this-the-correct-math-for-estimating-federal-taxes-using-marginal-tax-bracket" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    ¿Es esta la correcta matemáticas para calcular los impuestos federales utilizando tramos impositivos marginales?
+                </font></font></a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-aviation" title="Aviación Stack Intercambio"></div><a href="http://aviation.stackexchange.com/questions/3693/the-effect-of-altitude-on-the-speed-of-sound" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    El efecto de la altitud en la velocidad del sonido
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/23406212/why-does-auto-a-1-compile-in-c" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    ¿Por qué el auto a = 1; </font><font>compilar en C?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Intercambio"></div><a href="http://tex.stackexchange.com/questions/174814/how-to-get-only-one-symbol-from-a-symbol-package" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Cómo obtener sólo un símbolo de un paquete de símbolos?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Revisión del Código Stack Intercambio"></div><a href="http://codereview.stackexchange.com/questions/48756/find-all-the-missing-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Encontrar el número (s) que falta
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviación Stack Intercambio"></div><a href="http://aviation.stackexchange.com/questions/3690/what-is-the-fastest-airplane" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    ¿Cuál es el avión más rápido?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Intercambio"></div><a href="http://academia.stackexchange.com/questions/20148/prestige-of-publishing-in-special-vs-regular-journal-issue" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Prestige de publicar en especial frente al tema regular de la Revista
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-blender" title="Blender Stack Intercambio"></div><a href="http://blender.stackexchange.com/questions/9081/vertex-groups-can-not-be-named-in-blender-2-70" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Grupos Vertex no pueden ser nombradas en la licuadora 2.70
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-boardgames" title="Mesa y cartas Sexy Stack Intercambio"></div><a href="http://boardgames.stackexchange.com/questions/15438/what-happens-if-a-creature-has-no-toughness-defined" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    ¿Qué sucede si una criatura se ha definido ninguna resistencia?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-judaism" title="Mi Yodeya"></div><a href="http://judaism.stackexchange.com/questions/37728/can-you-make-an-upsherin-during-sefira" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:248 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    ¿Se puede hacer un Upsherin durante Sefira?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Física Stack Intercambio"></div><a href="http://physics.stackexchange.com/questions/110968/if-a-neutrino-has-a-rest-frame-why-cant-a-photon-have-a-rest-frame-as-well" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Si un neutrino tiene un sistema en reposo, ¿por qué no puede un fotón tener un sistema en reposo, así?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-music" title="Práctica Musical y Dinámica Stack Intercambio"></div><a href="http://music.stackexchange.com/questions/17183/guitars-playing-in-harmony" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Guitars jugando en armonía
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Intercambio"></div><a href="http://mathematica.stackexchange.com/questions/47171/returning-all-positions-for-all-different-occurences-of-elements-in-a-list" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Volviendo todas las posiciones para todas las diferentes ocurrencias de elementos en una lista
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-parenting" title="Parenting Stack Intercambio"></div><a href="http://parenting.stackexchange.com/questions/12387/teaching-my-10-year-old-son-appropriate-bathroom-manners" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    La enseñanza de mis hijo de 10 años modales baño apropiadas
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Intercambio"></div><a href="http://academia.stackexchange.com/questions/20150/using-grants-while-on-unpaid-leave" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    El uso de subvenciones durante la licencia no remunerada
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-biology" title="Biología Stack Intercambio"></div><a href="http://biology.stackexchange.com/questions/17077/why-does-evolution-not-make-our-life-longer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    ¿Por qué la evolución no hacer nuestra vida más larga?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="El lugar de trabajo Pila Cambio"></div><a href="http://workplace.stackexchange.com/questions/23469/how-to-deal-with-a-boss-who-has-lost-touch-with-modern-software-development" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    ¿Cómo lidiar con un jefe que ha perdido contacto con el desarrollo de software moderno?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Seguridad de la Información Stack Intercambio"></div><a href="http://security.stackexchange.com/questions/57156/bad-things-about-no-ssl-encryption" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Las cosas malas acerca de ningún cifrado SSL?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-serverfault" title="Fallo del servidor"></div><a href="http://serverfault.com/questions/592744/how-to-hide-a-password-passed-as-command-line-argument" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Cómo ocultar una contraseña se pasa como argumento de la línea de comandos?
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Intercambio"></div><a href="http://dba.stackexchange.com/questions/64359/looping-through-values-stripping-1-character-at-a-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Retransmisión de los valores de pelado 1 carácter a la vez
+                </font></font></a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="De rol Juegos Stack Intercambio"></div><a href="http://rpg.stackexchange.com/questions/36993/what-etiquette-should-a-new-player-observe-at-the-gaming-table" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })"><font><font>
+                    Lo que la etiqueta debe observar un nuevo jugador en la mesa de juego?
+                </font></font></a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/8269614" title="RSS de esta pregunta y sus respuestas">
+            <span class="feed-icon"></span><font><font>feed pregunta
+        </font></font></a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/8269614/ivc/dc30');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/8269614/ivc/dc30" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang"><font><font>defecto</font></font></div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/about"><font><font>sobre </font></font></a>
+                    <a href="http://stackoverflow.com/help"><font><font>ayuda </font></font></a>
+                        <a href="http://stackoverflow.com/help/badges"><font><font>insignias </font></font></a>
+                    <a href="http://blog.stackoverflow.com/?blb=1"><font><font>de blog </font></font></a>
+                        <a href="http://chat.stackoverflow.com/"><font><font>de ​​chat </font></font></a>
+                    <a href="http://data.stackexchange.com/"><font><font>de datos </font></font></a>
+                    <a href="http://stackexchange.com/legal"><font><font>legal </font></font></a>
+                    <a href="http://stackexchange.com/legal/privacy-policy"><font><font>política de privacidad </font></font></a>
+                    <a href="http://stackexchange.com/about/hiring"><font><font>trabajos </font></font></a>
+                    <a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MjAsImNtIjo5NTQsImNoIjoxMTc4LCJjciI6Mjc3NiwiZG0iOjQsImZjIjoyODYyLCJmbCI6Mjc1MSwibnciOjIyLCJydiI6MCwicHIiOjExNSwic3QiOjAsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2Fib3V0L2NvbnRhY3QiLCJyZSI6MX0&s=hRods5B22XvRBwWIwtIMekcyNF8"><font><font>Info. publicidad </font></font></a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)"><font><font>móvil </font></font></a>
+                    <b><a href="http://stackoverflow.com/contact"><font><font>contáctenos </font></font></a></b>
+                        <b><a href="http://meta.stackoverflow.com/"><font><font>retroalimentación</font></font></a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3"><font><font>
+                Tecnología
+            </font></font></th>
+            <th><font><font>
+                Vida / Artes
+            </font></font></th>
+            <th><font><font>
+                Cultura / Recreación
+            </font></font></th>
+            <th><font><font>
+                Ciencia
+            </font></font></th>
+            <th><font><font>
+                Otro
+            </font></font></th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="programadores profesionales y entusiastas"><font><font>Stack Overflow</font></font></a></li>
+                        <li><a href="http://serverfault.com/" title="sistemas y redes administradores profesionales"><font><font>Fallo del servidor</font></font></a></li>
+                        <li><a href="http://superuser.com/" title="entusiastas de la informática y usuarios avanzados"><font><font>Super User</font></font></a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="los usuarios avanzados de las aplicaciones web"><font><font>Aplicaciones Web</font></font></a></li>
+                        <li><a href="http://askubuntu.com/" title="Los usuarios y los desarrolladores de Ubuntu"><font><font>Pregunte Ubuntu</font></font></a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters"><font><font>Webmasters</font></font></a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="los desarrolladores de juegos profesionales e independientes"><font><font>Desarrollo del juego</font></font></a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="usuarios de TeX, LaTeX, el contexto y los sistemas de composición tipográfica relacionados"><font><font>TeX - LaTeX</font></font></a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="programadores profesionales interesados ​​en cuestiones conceptuales sobre el desarrollo de software"><font><font>Programadores</font></font></a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="los usuarios de Linux, FreeBSD y otros sistemas operativos * x-como las Naciones Unidas."><font><font>Unix y Linux</font></font></a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="los usuarios avanzados de hardware y software de Apple"><font><font>Pregunte Diferente (Apple)</font></font></a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="Desarrolladores de WordPress y administradores"><font><font>Desarrollo WordPress</font></font></a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartógrafos, geógrafos y profesionales de GIS"><font><font>Sistemas de Información Geográfica</font></font></a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electrónica y profesionales de la ingeniería eléctrica, estudiantes y entusiastas"><font><font>Electrotecnia</font></font></a></li>
+                        <li><a href="http://android.stackexchange.com/" title="entusiastas y usuarios avanzados del sistema operativo Android"><font><font>Los entusiastas de Android</font></font></a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Profesionales de la seguridad de la información"><font><font>Seguridad de la Información</font></font></a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="los profesionales de bases de datos que deseen mejorar sus habilidades de base de datos y aprender de otros en la comunidad"><font><font>Los administradores de bases de datos</font></font></a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Desarrolladores de Drupal y administradores"><font><font>Drupal Answers</font></font></a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="Entusiastas de SharePoint"><font><font>SharePoint</font></font></a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="experiencia del usuario investigadores y expertos"><font><font>Experiencia del usuario</font></font></a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="usuarios de Mathematica"><font><font>Mathematica</font></font></a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more"><font><font>
+                                más (14)
+                            </font></font></a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="profesional, entusiasta y aficionados a la fotografía"><font><font>Fotografía</font></font></a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="los entusiastas de la ciencia ficción y fantasía"><font><font>Ciencia ficción y fantasía</font></font></a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="diseñadores gráficos profesionales y no diseñadores que tratan de hacer su propio diseño gráfico"><font><font>Diseño Gráfico</font></font></a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="cocineros profesionales y aficionados"><font><font>Consejos sazonado (cocina)</font></font></a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contratistas y DIYers graves"><font><font>Mejoras para el hogar</font></font></a></li>
+                        <li><a href="http://money.stackexchange.com/" title="la gente que quiere ser una cultura financiera"><font><font>Finanzas personales y Dinero</font></font></a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="académicos y los matriculados en la educación superior"><font><font>Academia</font></font></a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more"><font><font>
+                                más (10)
+                            </font></font></a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="lingüistas, etimólogos, y los entusiastas del idioma Inglés graves"><font><font>Inglés Lengua y Uso</font></font></a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="escepticismo científico"><font><font>Los escépticos</font></font></a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="aquellos que basan sus vidas en la ley judía y la tradición, y cualquier persona interesada en aprender más"><font><font>Mi Yodeya (Judaísmo)</font></font></a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="guerreros de la carretera y los viajeros experimentados"><font><font>Viajes</font></font></a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="cristianos comprometidos, expertos en cristianismo y aquellos interesados ​​en aprender más"><font><font>Cristianismo</font></font></a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="VIDEOJUGADORAS apasionados en todas las plataformas"><font><font>Arqade (juego)</font></font></a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="personas que construyen y reparación de bicicletas, personas que se entrenan en bicicleta, o viaje en bicicleta"><font><font>Bicicletas</font></font></a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters y reproductores de mesa, papel y lápiz los juegos de rol"><font><font>Juegos de rol</font></font></a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more"><font><font>
+                                más (21)
+                            </font></font></a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="personas que estudian matemáticas de cualquier nivel y profesionales en campos afines"><font><font>Matemáticas</font></font></a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="personas interesadas en la estadística, aprendizaje automático, análisis de datos, minería de datos y visualización de datos"><font><font>Cruz Validado (estadísticas)</font></font></a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="los informáticos teóricos e investigadores en los campos relacionados"><font><font>Theoretical Computer Science</font></font></a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="investigadores activos, académicos y estudiantes de la física"><font><font>Física</font></font></a></li>
+                        <li><a href="http://mathoverflow.net/" title="matemáticos profesionales"><font><font>MathOverflow</font></font></a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more"><font><font>
+                                más (7)
+                            </font></font></a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="aplicaciones, scripts y el desarrollo con el Stack Intercambio API"><font><font>Pila Aplicaciones</font></font></a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-análisis de la familia Stack Intercambio de preguntas y respuestas de sitios web"><font><font>Meta Stack Intercambio</font></font></a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proponer nuevos sitios en la red Stack Intercambio"><font><font>Area 51</font></font></a></li>
+                        <li><a href="http://careers.stackoverflow.com/"><font><font>Stack Overflow Carreras</font></font></a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright"><font><font>
+                diseño de sitio / logo © 2014 cambio de pila inc; </font><font>contribuciones de los usuarios con licencia bajo </font></font><a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><font><font>cc by-sa 3.0</font></font></a><font><font>  
+                con </font></font><a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license"><font><font>atribución requiere</font></font></a>
+            </div>
+            <div id="svnrev"><font><font>
+                rev 2014.4.30.1585
+            </font></font></div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/read.htm"></iframe></div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('cakephp,cakephp-2.0');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|cakephp|cakephp-2.0|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script><div id="goog-gt-tt" class="goog-tooltip skiptranslate" dir="ltr" style="visibility: hidden; left: 347px; top: 1673px; display: none;"><div style="padding: 8px;"><div><div class="logo"><img src="./cakephp - Incluyendo JS en mora Ver en Cake PHP - Stack Overflow_files/translate-32.png" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texto original</h1></div><div class="middle" style="padding: 8px;"><div class="original-text">the reason is:
+ you have already inserted this script inside your view,</div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Sugiere una traducción mejor</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none; opacity: 0;"></div></div>        
+    
+    
+</body></html>

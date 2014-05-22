@@ -1,0 +1,24 @@
+
+<!-- saved from url=(0178)https://stackauth.com/auth/global/read?request=olHu6tBvy6iqOdVwhLq5j9KiC1FGNdHkv3pU4%2FwMPzqw40Sk3Kiz1%2F21lZLbbi6LU9PeHrgMizEDaEXEoREImw%3D%3D&nonce=HRRkUwAAAAAPlbWdm9HPng%3D%3D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                  <script>
+                  var data = {"ReadSession":"https://stackauth.com/auth/global/read-session","Request":"olHu6tBvy6iqOdVwhLq5j9KiC1FGNdHkv3pU4/wMPzqw40Sk3Kiz1/21lZLbbi6LU9PeHrgMizEDaEXEoREImw==","Nonce":"HRRkUwAAAAAPlbWdm9HPng==","Referrer":"http://stackoverflow.com/questions/8269614/including-js-in-default-view-in-cake-php","StorageName":"GlobalLogin"};
+
+                  var toMsg = window.parent;
+
+                  var obj = localStorage.getItem(data.StorageName);
+                  if(obj != null) {
+                  var req = new XMLHttpRequest();
+                  req.open('POST', data.ReadSession+'?request='+encodeURIComponent(data.Request)+'&nonce='+encodeURIComponent(data.Nonce)+'&seriesAndToken='+encodeURIComponent(obj), false);
+                  req.send(null);
+                  
+                    if(req.status == 200){
+                      toMsg.postMessage(req.responseText, data.Referrer);
+                    }else{
+                      toMsg.postMessage('No Session', data.Referrer);
+                    }
+                  }else{
+                    toMsg.postMessage('No Local Storage', data.Referrer);
+                  }
+                  </script>
+                  </head><body></body></html>

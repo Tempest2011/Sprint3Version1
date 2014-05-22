@@ -1,0 +1,300 @@
+/*/webroot/css*/
+/* ~~ no se fijen en el estilo ehhhehehhe yo m entiendo~~~~ */
+<style type="text/css">
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: red;
+	margin: 0%;
+	padding: 0%;
+	width:100%;
+	height:100%;
+	color: red;
+	
+}
+/* ~~ Selectores de elemento/etiqueta ~~ */
+/* ~~ Bueno la cabecera es la primera division del default... tuve aldunos problemas con l alto de las divisiones  ~~ */
+/* ~~ staba haciendo el tamaño de las div en % pa q no se desconfigure lei q el height no t lo desconfigura la pagina solo el width y n cake de todas formas  ~~ */
+/* ~~ x alguna extraña razon en cakephp no deja usar el height en % asi q lo deje en px no deberia desconfigurar la pagina ~~ */
+
+#cabecera {
+	width:100%;
+	height: 140px;
+	background-color:#0489B1;
+}
+
+#headimg {
+		display:inline;
+		background:  url(../img/fondo_cabecera1_11.jpg);
+		background-repeat:repeat-x;
+		float:left;
+		width:98%;
+		margin-left:1%;
+		margin-right:1%;
+        margin-top: 1%;
+		margin-bottom:0%;
+		
+	}
+#menu{
+		display:inline;
+		float:left;
+		width:98%;
+		height:20%;
+		background-color:#EFF8FB;
+        padding-top: 0.25%;
+        margin-top: 1%;
+        padding-left: 0%;
+        margin-left: 1%;
+		margin-right:1%;
+	
+	}
+
+#menu  link {
+	float:left;
+	height:100%;
+	background: url(../img/button_topnavi_norm.jpg);
+	background-repeat:no-repeat;
+	line-height:100%;
+}
+#menu ul li.selected {
+	float:left;
+	height:100%;
+	background:url(../img/button_topnavi_selected.jpg);
+	background-repeat:no-repeat;
+	line-height:100%;
+}
+#menu ul li a {
+	line-height:200%;
+	color:#8d8d8d;
+	font-size:100%;
+	font-weight:bold;
+	font-family:Verdana, sans-serif;
+	text-decoration:none;
+	padding-left:15%;
+       padding-right:26px;
+      
+}
+#menu ul li a:hover {
+	line-height:200%;
+	color:#8d8d8d;
+	font-size:100%;
+	font-weight:bold;
+	font-family:Verdana, sans-serif;
+	text-decoration:underline;
+	padding-left:15%;
+       padding-right:26px;
+}
+#menu ul li.selected a {
+	line-height:200%;
+	color:#757575;
+	font-size:100%;
+	font-weight:bold;
+	font-family:Verdana, sans-serif;
+	text-decoration:none;
+	padding-left:25%;
+       padding-right:26px;
+}
+#menu ul li.selected a:hover {
+	line-height:200%;
+	color:#757575;
+	font-size:100%;
+	font-weight:bold;
+	font-family:Verdana, sans-serif;
+	text-decoration:underline;
+	padding-left:15%;
+       padding-right:26px;
+}
+
+	h3{
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen del bloque contenedor. El margen inferior restante lo mantendrá separado de los elementos de que le sigan.  */
+	text-align: center;
+    font-family: cursive;
+    padding-top: 25px;
+	padding-left:0px;
+	}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	/*color: #42413C;*/
+	color: blue;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+/* ~~ Este contenedor de anchura fija rodea a todas las demás bloques ~~ */
+.container {
+	
+	width: 100%;
+	height:100%;
+	background-color: white;
+	margin: 0 auto;
+	margin-left:0%;/* el valor automático de los lados, unido a la anchura, centra el diseño  */
+}
+
+/* ~~ No se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. ~~ */
+
+/* ~~ Estas son las columnas para el diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de los elementos del bloque. Los elementos situados dentro de estos bloques tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral al bloque propiamente dicho, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en el  bloque y colocar un segundo bloque dentro de éste sin anchura y el relleno necesario para el diseño deseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso añadir un margen, evite colocarlo en el lado hacia el que se produce la flotación (por ejemplo: un margen derecho en un bloque configurado para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de bloques para los que deba incumplirse esta regla, deberá añadir una declaración "display:inline" a la regla del elemento del bloque para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que también se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos bloques de barra lateral podrían apilarse si fuera necesario. Si lo prefiere, éstas pueden cambiarse a ID fácilmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegación esté a la izquierda en lugar de a la derecha, simplemente haga que estas columnas floten en dirección opuesta (todas a la izquierda en lugar de todas a la derecha) y éstas se representarán en orden inverso. No es necesario mover los bloques por el código fuente HTML.
+
+*/
+/* ~~ el sidebar es la div de la izuierda y cambiara de acuerdo al menu qe se deba tener pa los distintos usuarios~~ */
+.sidebar1{
+	float: left;
+	width: 18%;
+	background-color: #F8EFFB;
+	padding-bottom: 0%;
+	padding-left:2%;
+	/* ~~ usando px para el alto ~~ */
+	padding-right:2%;
+	margin-bottom: 1%;
+	margin-top: 1%;
+	margin-left:1%;
+	height: 415px;
+}
+.sidebar1 form  label{
+    float: left;
+    margin-right: 0%;
+    margin-left: 2%;
+    text-align: left;
+    width: 100%;
+	padding-left:2%;
+}
+
+/* ~~este sidebar2 s como dice el menu q vendria a la derecha ~~ */
+#sidebar2 {
+	float: right;
+	width: 23%;
+	background-color: #F8EFFB;
+	padding-bottom: 0%;
+	padding-left:0%;
+	/* ~~ usando px para el alto ~~ */
+	padding-right:0%;
+	margin-bottom: 1%;
+	margin-top: 1%;
+	margin-left:0%;
+	height: 415px;
+}
+#sidebar2 h1{
+width: 100%;
+font-size: 100%;
+margin-top: 300px;
+color: blue;
+margin-left: 0%;
+}
+/* ~~ esta parte es pa dar stilo a la parte del contenido que es la qu mas va a cambiar~~ */
+.content {
+	padding: 1%;
+	width: 50%;
+	padding-right:1%;
+	float: left;
+	background-color: #F8EFFB;
+	margin-right: 0%;
+	margin-left:1%;
+	margin-top: 1%;
+}
+.content form  {
+	text-align: center;
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol {
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 2px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones  */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados  */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	width: 130px;  /*esta anchura hace que se pueda hacer clic en todo el botón para IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este vínculo de la anchura del contenedor de barra lateral. */
+	text-decoration: none;
+	background-color: #EADCAE;
+	/*background-color: #C6D580;*/
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #ADB96E;
+	color: #FFF;
+}
+footer {
+	margin-left:1%;
+	margin-right:1%;
+	padding-bottom: 1%;
+	padding-top:2%;
+	background-color: #0489B1;
+	height:30px;
+	position: relative;/* esto da a IE6 el parámetro hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+}
+footer p {
+	margin-left: 35%;
+	font-size:90%;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#555;
+}
+
+.anuncios {
+	background:url(../img/monitor2.jpg) 0 0 no-repeat;
+	float: left;
+	width: 100%;
+	padding-bottom: 0%;
+	padding-left:2%;
+	/* ~~ usando px para el alto ~~ */
+	padding-right:4%;
+	padding-top:15px;
+	margin-bottom: 0%;
+	margin-top: 10px;
+	margin-left:0%;
+	height:215px;
+	
+}
+.next,
+.prev {
+	display:block;
+	width:36px;
+	height:36px;
+	cursor:pointer;
+	position:absolute;
+	z-index:99;
+	top:50px;
+	margin-left:0%;
+}
+.next {
+	background:url(../img/slider-next.png) 0 0 no-repeat;
+	margin-top: 525px;
+	margin-left: 18%;
+}
+.prev {
+	background:url(../img/slider-prev.png) 0 0 no-repeat;
+	margin-top: 525px;
+}
+
+
+/*Compatibilidad con HTML5: define nuevas etiquetas HTML5 como display:block para que los navegadores sepan cómo procesar las etiquetas correctamente. */
+
+
+
+</style><!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
